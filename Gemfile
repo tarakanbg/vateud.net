@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.10'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -36,3 +36,11 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "activeadmin", "~> 0.5.1"
+gem "meta_search", "~> 1.1.3"
+
+gem "awesome_nested_set", "~> 2.1.6"
+gem "friendly_id", "~> 4.0.9"
+
+gem "haml", "~> 4.0.0"

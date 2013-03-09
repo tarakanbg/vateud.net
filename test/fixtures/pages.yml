@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  post: MyText
+  sidebar: MyText
+  slug: MyString
+  description: MyText
+  keywords: MyString
+  abstract: false
+  visible: false
+  menu: false
+
+two:
+  title: MyString
+  post: MyText
+  sidebar: MyText
+  slug: MyString
+  description: MyText
+  keywords: MyString
+  abstract: false
+  visible: false
+  menu: false

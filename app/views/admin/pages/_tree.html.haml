@@ -1,0 +1,21 @@
+.panel
+  %h3 Tree
+  .panel_contents
+    .attributes_table
+      %table
+        %tr
+          %th Parent
+          %td= link_to page.parent.title, "/admin/pages/#{page.parent.slug}" if page.parent
+        %tr  
+          %th Children
+          %td= raw(page_children(page))
+        %tr
+          %th Siblings
+          %td= raw(page_siblings(page))
+        %tr
+          %th Change
+          %td
+            %div.tree= link_to("Move left", "/pages/move_left/"+page.id.to_s, :method => :post) unless page.left_sibling.nil?
+            %div.tree= link_to("Move right", "/pages/move_right/"+page.id.to_s, :method => :post) unless page.right_sibling.nil?
+          
+          
