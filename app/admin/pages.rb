@@ -1,5 +1,7 @@
 ActiveAdmin.register Page do
 
+  menu :parent => "Editing", :priority => 1
+
   scope :main
   scope :visible
   scope :invisible
@@ -10,7 +12,8 @@ ActiveAdmin.register Page do
     column :name
     column :visible    
     column :menu
-    column :abstract   
+    column :abstract  
+    column :layout 
     column :updated_at
     
     default_actions
@@ -22,6 +25,7 @@ ActiveAdmin.register Page do
       f.input :parent_id, :as => :select, :collection => Page.all, :include_blank => true, :label_method => :title
       f.input :title
       # f.input :post, :as => :hidden
+      f.input :layout
       f.input :abstract
       f.input :visible      
       f.input :menu

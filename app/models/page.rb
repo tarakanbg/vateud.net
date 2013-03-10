@@ -1,7 +1,10 @@
 class Page < ActiveRecord::Base
-  attr_accessible :abstract, :description, :keywords, :menu, :post, :sidebar, :slug, :title, :visible, :name, :parent_id
+  attr_accessible :abstract, :description, :keywords, :menu, :post, :sidebar, :slug, :title, :visible
+  attr_accessible :name, :parent_id, :layout_id
 
   acts_as_nested_set
+
+  belongs_to :layout
 
   extend FriendlyId
   friendly_id :name, :use => :slugged
