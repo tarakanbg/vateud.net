@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+
+
+$(document).ready(function(){
+  setInterval(function() {
+    if ($("#feature_slider").hasClass("disabled")){
+     // $('#feature_slider').fadeOut();
+     $("#feature_slider").removeClass("disabled");
+     // $("#pagination li").removeClass("active");
+    }    
+  }, 8000);
+});
+
+

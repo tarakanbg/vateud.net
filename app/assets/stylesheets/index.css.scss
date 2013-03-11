@@ -176,7 +176,7 @@
     position: absolute;
     top: 250px;
     left: 0;
-    background: url(../img/leftright-arrows.png) no-repeat;
+    background: url(image_path('leftright-arrows.png')) no-repeat;    
     opacity: .5;
     -webkit-transition: opacity .1s linear;
     -moz-transition: opacity .1s linear;
