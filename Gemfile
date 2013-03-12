@@ -37,6 +37,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem 'quiet_assets', :group => :development
+gem "thin", "~> 1.5.0", :group => :development
+
 gem "activeadmin", "~> 0.5.1"
 gem "meta_search", "~> 1.1.3"
 

@@ -5,6 +5,7 @@ ActiveAdmin.register Page do
   scope :main
   scope :visible
   scope :invisible
+  scope :in_menu
 
   index do    
     column :title

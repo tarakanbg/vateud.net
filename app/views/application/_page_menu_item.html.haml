@@ -1,0 +1,13 @@
+/ %ul.nav  
+/   - if @religion
+/     - if religion_item.name == @religion.name
+/       %li= link_to religion_item.title, religion_item.url, :class => "nav-selected"
+/     - else
+/       %li= link_to religion_item.title, religion_item.url  
+/   - else
+/     %li= link_to religion_item.title, religion_item.url
+/   - if (controller_name == "religions" and action_name != "index")
+/     - if religion_item.is_ancestor_of?(@religion)
+/       = render :partial => "religion_item", :collection => religion_item.children if religion_item.children  
+/     - if religion_item == @religion
+/       = render :partial => "religion_item", :collection => religion_item.children if religion_item.children  
