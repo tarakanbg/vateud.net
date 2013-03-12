@@ -230,10 +230,7 @@ $(document).ready(function () {
             $(".slide.active img.fade,.slide.active .info").fadeIn(600, "easeInOutQuad", function () {
                 $("#feature_slider").removeClass()
             })
-        }, 800);
-       
-
-
+        }, 800)
     }
     function c() {
         $("#feature_slider").addClass("disabled").append('<ul id="pagination" /><a href="" id="slide-left" /><a href="" id="slide-right" />');
@@ -244,9 +241,6 @@ $(document).ready(function () {
         $("#pagination").css({
             left: ($(window).width() - $("#pagination li").length * 14) / 2
         });
-        // $("#pagination").css({
-        //     left: -99999
-        // });
         var h = 0;
 
         function j() {

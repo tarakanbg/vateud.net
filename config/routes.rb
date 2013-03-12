@@ -1,5 +1,7 @@
 VateudNet::Application.routes.draw do
   
+  get "pages/index"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -60,4 +62,7 @@ VateudNet::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+  post 'pages/move_left/:id' => 'pages#move_left'
+  post 'pages/move_right/:id' => 'pages#move_right'
 end
