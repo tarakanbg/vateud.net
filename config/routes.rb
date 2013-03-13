@@ -1,5 +1,9 @@
 VateudNet::Application.routes.draw do
   
+    namespace :mercury do
+      resources :images
+    end
+
   mount Mercury::Engine => '/'
 
   ActiveAdmin.routes(self)

@@ -50,3 +50,4 @@ gem "haml", "~> 4.0.0"
 gem "bootstrap-sass", "~> 2.3.0.1"
 
 gem "mercury-rails", "~> 0.9.0"
+gem 'paperclip'
