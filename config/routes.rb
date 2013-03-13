@@ -1,6 +1,6 @@
 VateudNet::Application.routes.draw do
   
-  get "pages/index"
+  mount Mercury::Engine => '/'
 
   ActiveAdmin.routes(self)
 
@@ -65,4 +65,10 @@ VateudNet::Application.routes.draw do
 
   post 'pages/move_left/:id' => 'pages#move_left'
   post 'pages/move_right/:id' => 'pages#move_right'
+
+  get '/:id' => 'pages#show', :as => :page
+  get '/:id/:id' => 'pages#show', :as => :page
+  get '/:id/:id/:id' => 'pages#show', :as => :page
+  get '/:id/:id/:id/:id' => 'pages#show', :as => :page
+  get '/:id/:id/:id/:id/:id' => 'pages#show', :as => :page
 end

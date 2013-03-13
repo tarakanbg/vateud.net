@@ -2,6 +2,11 @@ class PagesController < ApplicationController
   def index
   end
 
+  def show
+    @pages = Page.main.visible.in_menu
+    @page = Page.find(params[:id])
+  end
+
   def move_left
     if admin_user_signed_in?
       page = Page.find(params[:id])

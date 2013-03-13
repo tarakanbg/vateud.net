@@ -1,15 +1,14 @@
 #aboutus
   .container
     .section_header
-      %h3 About Us
+      %h3= @page.title
     .row
       .span6.intro
+        =@page.post
         %h6 There are many variations of passages Lorem Ipsum available, injected generators on the hidden.
         %p There are many variations of passages of Lorem Ipsum available, injected ...
-        %p= link_to "Link", :anchor => "ttt"
       .span6.flexslider
         %ul.slides
-          = @pages
           / %li <img src="img/about_slide1.jpg" />
           / %li <img src="img/about_slide1.jpg" />
           / %li <img src="img/about_slide1.jpg" />
