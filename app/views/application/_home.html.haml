@@ -4,7 +4,8 @@
       %h3= @page.title
     .row
       .span6.intro
-        =@page.post
+        #page_content.mercury-region{:data => {:type => "editable"}}
+          =raw(@page.post)
         %h6 There are many variations of passages Lorem Ipsum available, injected generators on the hidden.
         %p There are many variations of passages of Lorem Ipsum available, injected ...
       .span6.flexslider
