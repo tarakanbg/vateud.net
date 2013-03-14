@@ -3,10 +3,11 @@
     .btn-group
       -if @page.slug == "home"
         = link_to raw('<i class="icon-edit icon-white"></i> Edit text'), "/editor/" + @page.slug, id: "edit_link", data: { save_url: "/pages/#{@page.id}"}, :class => "btn btn-success" if @page
+        = link_to raw('<i class="icon-wrench icon-white"></i> Page settings'), "/admin/pages/#{@page.id}/edit", :class => "btn btn-primary" if @page
+        
       - else
-        = link_to raw('<i class="icon-edit icon-white"></i> Edit text'), "/editor" + request.path, id: "edit_link", data: { save_url: "/#{controller_name}/#{@page.id}"} if @page
-      
-      = link_to raw('<i class="icon-wrench icon-white"></i> Page settings'), "/admin/#{@adminlink}/#{@page.id}/edit", :class => "btn btn-primary" if @page
+        = link_to raw('<i class="icon-edit icon-white"></i> Edit text'), "/editor" + request.path, id: "edit_link", data: { save_url: "/#{controller_name}/#{@page.id}"}, :class => "btn btn-success" if @page
+        = link_to raw('<i class="icon-wrench icon-white"></i> Page settings'), "/admin/#{controller_name}/#{@page.id}/edit", :class => "btn btn-primary" if @page
       = link_to raw('<i class="icon-tasks icon-white"></i> Admin panel'), "/admin", :class => "btn btn-primary"
       = link_to raw('<i class="icon-user icon-white"></i> Logout'), "/admin/logout", :class => "btn btn-danger"
     .adminname  Logged in as: <strong>#{current_admin_user.email}</strong>
