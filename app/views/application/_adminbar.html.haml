@@ -1,0 +1,13 @@
+#adminbar
+  #adminmenu
+    -if @page.slug == "home"
+      .editlink= link_to "Edit text", "/editor/" + @page.slug, id: "edit_link", data: { save_url: "/pages/#{@page.id}"} if @page
+    - else
+    .editlink= link_to "Edit text", "/editor" + request.path, id: "edit_link", data: { save_url: "/#{controller_name}/#{@page.id}"} if @page
+    
+    .editlink= link_to "Admin panel", "/admin"
+    .editlink= link_to "Page settings", "/admin/#{@adminlink}/#{@page.id}/edit" if @page
+    .editlink= link_to "Logout", "/admin/logout"
+    .adminname  Logged in as: <strong>#{current_admin_user.email}</strong>
+    
+    

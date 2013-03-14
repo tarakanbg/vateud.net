@@ -30,3 +30,8 @@
 // });
 
 
+jQuery(parent).trigger('initialize:frame');
+
+// jQuery(window).on('mercury:ready', function() {
+//   Mercury.saveUrl = '/pages';
+// });

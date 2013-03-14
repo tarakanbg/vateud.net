@@ -70,6 +70,21 @@ VateudNet::Application.routes.draw do
   post 'pages/move_left/:id' => 'pages#move_left'
   post 'pages/move_right/:id' => 'pages#move_right'
 
+
+  put 'pages/:id' => 'pages#mercury_update', :as => :page
+  put '/:id' => 'pages#mercury_update', :as => :page
+  put '/:id/:id' => 'pages#mercury_update', :as => :page
+  put '/:id/:id/:id' => 'pages#mercury_update', :as => :page
+  put '/:id/:id/:id/:id' => 'pages#mercury_update', :as => :page
+  put '/:id/:id/:id/:id/:id' => 'pages#mercury_update', :as => :page
+  # put 'pages' => 'pages#mercury_update'
+  # post 'pages/:id' => 'pages#mercury_update'
+  # post 'home/:id' => 'home#mercury_update'
+
+  # resources :pages do
+  #   member { put :mercury_update }
+  # end
+
   get '/:id' => 'pages#show', :as => :page
   get '/:id/:id' => 'pages#show', :as => :page
   get '/:id/:id/:id' => 'pages#show', :as => :page

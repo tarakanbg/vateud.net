@@ -14,6 +14,7 @@
     = csrf_meta_tags
 
   %body.pull_top
+    = render :partial => "adminbar" if admin_user_signed_in?
     = render :partial => "menu_front"
     = render :partial => "slider"
         
