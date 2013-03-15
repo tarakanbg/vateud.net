@@ -1,5 +1,7 @@
 VateudNet::Application.routes.draw do
   
+  
+
     namespace :mercury do
       resources :images
     end
@@ -84,10 +86,15 @@ VateudNet::Application.routes.draw do
   # resources :pages do
   #   member { put :mercury_update }
   # end
+  
+  get "news/index"
+  get 'news/:id' => 'news#show', :as => :news
 
   get '/:id' => 'pages#show', :as => :page
   get '/:id/:id' => 'pages#show', :as => :page
   get '/:id/:id/:id' => 'pages#show', :as => :page
   get '/:id/:id/:id/:id' => 'pages#show', :as => :page
   get '/:id/:id/:id/:id/:id' => 'pages#show', :as => :page
+
+  # get "news/show"
 end

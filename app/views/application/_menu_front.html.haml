@@ -11,6 +11,8 @@
       </a>
       .nav-collapse.collapse
         %ul.nav.pull-right
+          %li= link_to "HOME", root_url
+          %li= link_to "NEWS", :controller => "news"
           - for page in @pages
             - if page.children.visible.in_menu.count > 0
               %li.dropdown
@@ -21,23 +23,8 @@
                 %ul.dropdown-menu
                   - for child in page.children.visible.in_menu
                     %li= link_to child.name.upcase, child.url 
+            - elsif page.slug == "home"
+              - next  
             - else      
               %li=link_to page.name.upcase, page.url
-              / = render :partial => "page_menu_item", :collection => page.children
-          / %li <a href="index.html" class="active">HOME</a>
-          / %li <a href="about-us.html">ABOUT US</a>
-          / %li.dropdown
-          /   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          /   PAGES
-          /   <b class="caret"></b>
-          /   </a>
-          /   %ul.dropdown-menu
-          /     <li><a href="features.html">Features</a></li>
-          /     <li><a href="services.html">Services</a></li>
-          /     <li><a href="portfolio.html">Portfolio</a></li>
-          /     <li><a href="portfolio-item.html">Portfolio Item</a></li>
-          /     <li><a href="coming-soon.html">Coming Soon</a></li>
-          /     <li><a href="sign-in.html">Sign in</a></li>
-          /     <li><a href="sign-up.html">Sign up</a></li>
-          /     <li><a href="backgrounds.html">Backgrounds</a></li>
-          / %li <a class="btn-header" href="sign-up.html">Sign up</a>
+             

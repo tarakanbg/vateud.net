@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315081225) do
+ActiveRecord::Schema.define(:version => 20130315082349) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -64,6 +64,18 @@ ActiveRecord::Schema.define(:version => 20130315081225) do
     t.datetime "image_updated_at"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "news", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "post",        :default => "Edit here!"
+    t.boolean  "published",   :default => true
+    t.integer  "author_id"
+    t.text     "description", :default => "VATSIM European Division News"
+    t.string   "keywords",    :default => "vatsim, vateud, news, simulation, flight, atc, vateur"
+    t.datetime "created_at",                                                                       :null => false
+    t.datetime "updated_at",                                                                       :null => false
   end
 
   create_table "pages", :force => true do |t|
