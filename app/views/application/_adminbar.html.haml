@@ -10,6 +10,6 @@
         = link_to raw('<i class="icon-wrench icon-white"></i> Page settings'), "/admin/#{controller_name}/#{@page.id}/edit", :class => "btn btn-primary btn-small" if @page
       = link_to raw('<i class="icon-tasks icon-white"></i> Admin panel'), "/admin", :class => "btn btn-primary btn-small"
       = link_to raw('<i class="icon-user icon-white"></i> Logout'), "/admin/logout", :class => "btn btn-danger btn-small"
-    .adminname  Logged in as: <strong>#{current_admin_user.email}</strong>
+    .adminname  Logged in as: <strong>#{current_admin_user.name}</strong>
     
     

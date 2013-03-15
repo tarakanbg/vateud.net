@@ -3,6 +3,8 @@ ActiveAdmin.register AdminUser do
   menu :parent => "Administration", :priority => 1
 
   index do                            
+    column :name                     
+    column :position                     
     column :email                     
     column :current_sign_in_at        
     column :last_sign_in_at           
@@ -13,7 +15,9 @@ ActiveAdmin.register AdminUser do
   filter :email                       
 
   form do |f|                         
-    f.inputs "Admin Details" do       
+    f.inputs "Admin Details" do  
+      f.input :name                  
+      f.input :position                  
       f.input :email                  
       f.input :password               
       f.input :password_confirmation  
