@@ -1,0 +1,30 @@
+#blog
+  .container
+    .section_header
+      %h3 News
+      / <input type="text" class="input-large search-query" placeholder="Search">
+    - counter = 0  
+    - for item in @news  
+      = raw("<div class=\"row post_row\">") if counter == 0      
+      .span4.post
+        =image_tag "backgrounds/aqua_thumb.jpg"
+        .text
+          %h5= link_to item.title, item.url
+          %span.date= item.created_at.strftime("%d %b. %Y")
+          %p= item.post
+        .author_box
+          %h6= item.author.name
+          %p= item.author.position
+        <a class="plus_wrapper" href="blogpost.html"><span>&#43;</span></a>
+      = raw("</div>") if counter == 2    
+      - counter == 2 ? counter = 0 : counter += 1
+
+
+    .pagination
+      %ul
+        <li><a href="#">Prev</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">Next</a></li>

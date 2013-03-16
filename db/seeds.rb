@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Layout.create(name: 'home', priority: 99)
+Page.create(name: 'Home', title: "Welcome", layout_id: 1 )

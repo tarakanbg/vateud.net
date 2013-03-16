@@ -13,13 +13,13 @@
     = csrf_meta_tags
 
   %body.pull_top
-    = render :partial => "adminbar" if admin_user_signed_in?
-    = render :partial => "menu_front"
-    = render :partial => "slider"
+    = adminbar
+    = render :partial => "menu"
+    = home_slider
         
     = yield
 
-    = render :partial => "footer"
+    = footer
     = javascript_include_tag "application"
 
 

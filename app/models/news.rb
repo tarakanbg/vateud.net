@@ -3,8 +3,14 @@ class News < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :title, :use => :slugged  
+
+  belongs_to :author, :class_name => "AdminUser", :foreign_key => "author_id"
   
   scope :published, where(:published => true)
   scope :draft, where(:published => false)
+
+  def url    
+    '/news/' + self.slug
+  end
 
 end
