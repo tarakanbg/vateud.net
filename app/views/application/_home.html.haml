@@ -5,10 +5,9 @@
     .row
       .span6.intro
         #page_content.mercury-region{:data => {:mercury => "full"}}
-          =raw(@page.post)        
+          =raw(@page.post)  
       .span6.flexslider
         %ul.slides
-          / %li <img src="img/about_slide1.jpg" />
-          / %li <img src="img/about_slide1.jpg" />
-          / %li <img src="img/about_slide1.jpg" />
-        
+          - for slide in random_horizontal_images(5)
+            %li= image_tag slide
+          

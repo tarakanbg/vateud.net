@@ -7,7 +7,8 @@
     - for item in @news  
       = raw("<div class=\"row post_row\">") if counter == 0      
       .span4.post
-        =image_tag "backgrounds/aqua_thumb.jpg"
+        / =image_tag "backgrounds/aqua_thumb.jpg"
+        =image_tag random_horizontal_images(1).first
         .text
           %h5= link_to item.title, item.url
           %span.date= item.created_at.strftime("%d %b. %Y")
