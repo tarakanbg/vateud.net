@@ -1,16 +1,8 @@
 #footer
   .container
     .row.sections
-      .span4.recent_posts
-        %h3.footer_header Recent Posts
-        .post
-          <a href="blogpost.html"><img src="img/recent_post1.png" class="img-circle" /></a>
-          .date Wed, 12 Dec
-          <a href="blogpost.html" class="title">Randomised words which don't look embarrasing hidden.</a>
-        .post
-          <a href="blogpost.html"><img src="img/recent_post2.png" class="img-circle" /></a>
-          .date Mon, 12 Dec
-          <a href="blogpost.html" class="title">Randomised words which don't look embarrasing hidden.</a>
+      = render "recent_news"
+      
       .span4.testimonials
         %h3.footer_header Testimonials
         .wrapper
