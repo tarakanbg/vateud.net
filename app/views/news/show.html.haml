@@ -1,0 +1,33 @@
+#blog_post
+  .container
+    .section_header
+      %h3= @news_post.title
+
+    .row
+      .span7
+        =image_tag random_horizontal_images(1).first
+        .post_content
+          %span.date= @news_post.created_at.to_formatted_s(:long)
+          #news_content.mercury-region{:data => {:mercury => "full"}}
+            =raw(@news_post.post)  
+          
+                
+          .author_box
+            .author= @news_post.author.name
+            .area= @news_post.author.position
+                
+
+      .span4.sidebar.offset1
+        .box.box2
+          .sidebar_header
+            %h4 Recent News
+          .recent
+            - for item in @news
+              .post
+                =link_to image_tag(random_rounded_small_images(1).first, :class => "img-circle"), item.url
+                / <a href="blogpost.html"><img src="img/recent_post1.png" class="img-circle" /></a>
+                .date= item.created_at.strftime("%d %b. %Y")
+                = link_to item.title, item.url, :class => "title"
+                = raw("<em>by #{item.author.name}</em>")
+              .clear  
+                    

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -20,7 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem "jquery-rails", "2.3.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -38,16 +38,17 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'quiet_assets', :group => :development
-gem "thin", "~> 1.5.0", :group => :development
+gem "thin", "~> 1.5.1", :group => :development
 
-gem "activeadmin", "~> 0.5.1"
+gem "activeadmin", "~> 0.6.0"
 gem "meta_search", "~> 1.1.3"
 
 gem "awesome_nested_set", "~> 2.1.6"
 gem "friendly_id", "~> 4.0.9"
 
-gem "haml", "~> 4.0.0"
-gem "bootstrap-sass", "~> 2.3.0.1"
+gem "haml", "~> 4.0.3"
+gem "bootstrap-sass", "~> 2.3.2.0"
 
 gem "mercury-rails", "~> 0.9.0"
-gem 'paperclip'
+gem "paperclip", "~> 3.4.2"
+gem "yaml_db", "~> 0.2.3"

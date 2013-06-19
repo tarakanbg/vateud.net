@@ -3,12 +3,11 @@ VateudNet::Application.routes.draw do
   namespace :mercury do
     resources :images
   end
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   mount Mercury::Engine => '/'
 
-  ActiveAdmin.routes(self)
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -67,10 +66,12 @@ VateudNet::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
+  ActiveAdmin.routes(self)
   post 'pages/move_left/:id' => 'pages#move_left'
   post 'pages/move_right/:id' => 'pages#move_right'
 
 
+  put 'news/:id' => 'news#mercury_update', :as => :news
   put 'pages/:id' => 'pages#mercury_update', :as => :page
   put '/:id' => 'pages#mercury_update', :as => :page
   put '/:id/:id' => 'pages#mercury_update', :as => :page

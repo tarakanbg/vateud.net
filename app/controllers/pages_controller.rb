@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def show
     @pages = Page.main.visible.in_menu
     @page = Page.find(params[:id])
+    @news = News.published.limit(3)
   end
 
   def move_left
