@@ -7,16 +7,15 @@
     - for item in @news  
       = raw("<div class=\"row post_row\">") if counter == 0      
       .span4.post
-        / =image_tag "backgrounds/aqua_thumb.jpg"
         =image_tag random_horizontal_images(1).first
         .text
           %h5= link_to item.title, item.url
           %span.date= item.created_at.strftime("%d %b. %Y")
-          %p= item.post
+          %p= raw(item.post[0..150]) + "..."
         .author_box
           %h6= item.author.name
           %p= item.author.position
-        <a class="plus_wrapper" href="blogpost.html"><span>&#43;</span></a>
+        = link_to raw("<span>&#43;</span>"), item.url, :class => "plus_wrapper"
       = raw("</div>") if counter == 2    
       - counter == 2 ? counter = 0 : counter += 1
 
