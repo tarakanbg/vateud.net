@@ -48,3 +48,5 @@ gem "bootstrap-sass", "~> 2.3.2.2"
 gem "mercury-rails", "~> 0.9.0"
 gem "paperclip", "~> 3.5.1"
 gem "yaml_db", "~> 0.2.3"
+
+gem "pg", "~> 0.17.1"

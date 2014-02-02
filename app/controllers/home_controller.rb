@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     @pages = Page.main.visible.in_menu
     @page = Page.where(:slug => "home").first
     @news = News.published.limit(3)
+    @events = Event.future.limit(3)
     # @images = 
   end
 

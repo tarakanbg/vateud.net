@@ -1,10 +1,9 @@
 .span4.recent_posts
   %h3.footer_header Upcoming events
-  / - for item in @news
-  /   .post
-  /     =link_to image_tag(random_rounded_small_images(1).first, :class => "img-circle"), item.url
-  /     / <a href="blogpost.html"><img src="img/recent_post1.png" class="img-circle" /></a>
-  /     .date= item.created_at.strftime("%d %b. %Y")
-  /     = link_to item.title, item.url, :class => "title"
-  /     = raw("<em>by #{item.author.name}</em>")
+  - for item in @events
+    .post
+      =link_to image_tag(random_rounded_small_images(1).first, :class => "img-circle"), "#"
+      .date= item.starts.strftime("%d %b. %Y")
+      = link_to item.title, "#", :class => "title"
+      = raw("<em>by #{item.subdivisions.first.name}</em>")
     

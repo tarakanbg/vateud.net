@@ -3,11 +3,18 @@
     .section_header
       %h3.center= @page.title
     .row
-      .span6.intro
-        #page_content.mercury-region{:data => {:mercury => "full"}}
-          =raw(@page.post)  
-      .span6.flexslider
-        %ul.slides
-          - for slide in random_horizontal_images(5)
-            %li= image_tag slide
+      .span6
+        .intro
+          #page_content.mercury-region{:data => {:mercury => "full"}}
+            =raw(@page.post)  
+      .span6
+        .row
+          .flexslider
+            %ul.slides
+              - for slide in random_horizontal_images(5)
+                %li= image_tag slide
+        .row        
+          #page_sidebar.sidebar-home.mercury-region{:data => {:mercury => "full"}}
+            =raw(@page.sidebar)  
+
           

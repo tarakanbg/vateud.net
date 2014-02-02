@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def adminbar
-    render :partial => "adminbar" if admin_user_signed_in?
+    render :partial => "adminbar" if admin_user_signed_in? && current_admin_user.try(:page_editor?)
   end
 
   def footer

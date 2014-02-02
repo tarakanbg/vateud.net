@@ -11,7 +11,7 @@ class NewsController < ApplicationController
   end
 
   def mercury_update
-    if admin_user_signed_in?
+    if admin_user_signed_in? && current_admin_user.try(:page_editor?)
       page =News.find(params[:id])
       #page.name = params[:content][:page_name][:value]
       page.post = params[:content][:news_content][:value]
