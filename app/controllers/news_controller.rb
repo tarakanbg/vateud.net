@@ -2,6 +2,7 @@ class NewsController < ApplicationController
   def index
     @pages = Page.main.visible.in_menu
     @news = News.published
+    @news = @news.paginate(:page => 1, :per_page => 9)
   end
 
   def show

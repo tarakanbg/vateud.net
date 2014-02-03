@@ -5,8 +5,12 @@ class PagesController < ApplicationController
   def show
     @pages = Page.main.visible.in_menu
     @page = Page.find(params[:id])
-    @news = News.published.limit(3)
-    @events = Event.future.limit(3)
+    if @page.slug == "home"
+      @news = News.published.limit(3)
+      @events = Event.future.limit(3)
+      feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/VateudNewTasks")
+      @tasks = feed.entries[0..2]
+    end
   end
 
   def move_left

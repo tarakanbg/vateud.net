@@ -2,8 +2,8 @@
   %h3.footer_header Upcoming events
   - for item in @events
     .post
-      =link_to image_tag(random_rounded_small_images(1).first, :class => "img-circle"), "#"
+      =link_to image_tag(random_rounded_small_images(1).first, :class => "img-circle"), "http://api.vateud.net/events/#{item.id}", :target => "_blank"
       .date= item.starts.strftime("%d %b. %Y")
-      = link_to item.title, "#", :class => "title"
+      = link_to item.title, "http://api.vateud.net/events/#{item.id}", :class => "title", :target => "_blank"
       = raw("<em>by #{item.subdivisions.first.name}</em>")
     

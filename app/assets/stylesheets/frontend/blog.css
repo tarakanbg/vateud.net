@@ -142,7 +142,10 @@
 /*pagination*/
 #blog .pagination {
 	margin: 35px auto 0;
-	width: 26%;
+	/*width: 26%;*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 /* Responsive

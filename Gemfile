@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
 
-gem 'sqlite3', :group => :development
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,6 +32,7 @@ gem "jquery-rails", "2.3.0"
 # To use debugger
 # gem 'debugger'
 
+gem 'sqlite3', :group => :development
 gem 'quiet_assets', :group => :development
 gem "thin", "~> 1.5.1", :group => :development
 
@@ -44,9 +44,12 @@ gem "friendly_id", "~> 4.0.9"
 
 gem "haml", "~> 4.0.3"
 gem "bootstrap-sass", "~> 2.3.2.2"
+gem "bootstrap-will_paginate", "~> 0.0.10"
 
 gem "mercury-rails", "~> 0.9.0"
 gem "paperclip", "~> 3.5.1"
 gem "yaml_db", "~> 0.2.3"
 
 gem "pg", "~> 0.17.1"
+
+gem "feedzirra", "~> 0.7.0"
