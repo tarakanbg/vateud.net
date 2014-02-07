@@ -125,7 +125,21 @@
 .slide#tour .info a {
     color: #fff;
     font-weight: bold;
-    background-color: #2a205d;
+    background-color: #8ec34f;
+    padding: 13px 30px;
+    font-size: 19px;
+    border-radius: 5px;
+    margin-top: 40px;
+    display: inline-block;
+    -webkit-transition: opacity .1s linear;
+    -moz-transition: opacity .1s linear;
+    transition: opacity .1s linear;
+}
+
+.slide#responsive .info a {
+    color: #fff;
+    font-weight: bold;
+    background-color: #21ace3;
     padding: 13px 30px;
     font-size: 19px;
     border-radius: 5px;
@@ -176,7 +190,7 @@
     position: absolute;
     top: 250px;
     left: 0;
-    background: url(image_path('leftright-arrows.png')) no-repeat;    
+    background: url(image_path('leftright-arrows.png')) no-repeat;
     opacity: .5;
     -webkit-transition: opacity .1s linear;
     -moz-transition: opacity .1s linear;
@@ -490,13 +504,13 @@
     background-position: 0px 0px;
 }
 #clients .client .img{
-    cursor: pointer;    
+    cursor: pointer;
     -webkit-transition: box-shadow .1s linear;
     -moz-transition: box-shadow .1s linear;
     transition: box-shadow .1s linear;
 }
 #clients .client .img:hover{
-    cursor: pointer;    
+    cursor: pointer;
     /*box-shadow: 0px 0px 2px 0px rgb(155, 155, 155);*/
     border-radius: 8px;
 }
@@ -510,15 +524,15 @@
 
 }
 @media (min-width: 980px) {
-    
+
 }
 @media (max-width: 979px) {
     #showcase .features_op1_row .feature .img_box span.circle{
         top: 35%;
-    }    
+    }
 }
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { 
+@media (min-width: 768px) and (max-width: 979px) {
     #in_pricing .plan a.order{
         width: 64%;
     }
@@ -532,7 +546,7 @@
         right: 6%;
         width: 25%;
     }
-    .slide#responsive .info 
+    .slide#responsive .info
     .slide#tour .info a {
         font-size: 15px;
     }

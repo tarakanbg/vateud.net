@@ -1,28 +1,36 @@
 <section id="feature_slider" class="">
 %article.slide#showcasing{:style => "background: url(#{image_path('backgrounds/landscape.png')}) repeat-x top center;"}
-  =image_tag "slides/scene1/macbook.png", :class => "asset left-30 sp600 t120 z1"
+  =image_tag "slides/plane.png", :class => "asset left-1 sp400 t90 z1"
   .info
-    %h2 Beautiful theme for showcasing your works.
+    %h2
+      experience.<br />
+      %span.eud-green discover.<br />
+      %span.eud-blue enjoy.
 
 %article.slide#ideas{:style => "background: url(#{image_path('backgrounds/aqua.jpg')}) repeat-x top center;"}
-  =image_tag "slides/scene2/left.png", :class => "asset left-480 sp600 t260 z1"
-  =image_tag "slides/scene2/middle.png", :class => "asset left-210 sp600 t213 z2"
-  =image_tag "slides/scene2/right.png", :class => "asset left60 sp600 t260 z1"
+  =link_to image_tag("slides/serv1.jpg", :class => "asset left-510 sp600 t260 z1"), "http://api.vateud.net", :target => "_blank"
+  =link_to image_tag("slides/serv2.jpg", :class => "asset left-240 sp600 t213 z2"), "http://tasks.vateud.net", :target => "_blank"
+  =link_to image_tag("slides/serv3.jpg", :class => "asset left260 sp600 t260 z1"), "http://ptd.vateud.net", :target => "_blank"
   .info
-    %h2 We love to turn ideas into beautiful things.
+    %h2
+      We deliver the
+      %span.eud-green data
+      and
+      %span.eud-blue services
+      that you need.
 
-%article.slide#tour{:style => "background: url(#{image_path('backgrounds/color-splash.jpg')}) repeat-x top center;"}
-  =image_tag "slides/scene3/ipad.png", :class => "asset left-472 sp650 t210 z3"
-  =image_tag "slides/scene3/iphone.png", :class => "asset left-365 sp600 t270 z4"
-  =image_tag "slides/scene3/desktop.png", :class => "asset left-350 sp450 t135 z2"
-  =image_tag "slides/scene3/macbook.png", :class => "asset left-185 sp550 t220 z1"
+%article.slide#tour{:style => "background: url(#{image_path('backgrounds/baby-blue.jpg')}) repeat-x top center;"}
+  =image_tag "slides/w14_foot.png", :class => "asset left-550 sp650 t130 z3"
+  =image_tag "slides/w14_sky.png", :class => "asset left-570 sp450 t135 z2"
+  =image_tag "slides/w14_top.png", :class => "asset left-185 sp550 t370 z1"
   .info
-    %h2 Fully Responsive theme
-    <a href="features.html">TOUR THE PRODUCT</a>
+    %h2 W14.ME
+    <a href="http://www.w14.me/" target="_blank">Will you be there?</a>
 
 %article.slide#responsive{:style => "background: url(#{image_path('backgrounds/indigo.jpg')}) repeat-x top center;"}
-  =image_tag "slides/scene4/html5.png", :class => "asset left-472 sp600 t120 z3"
-  =image_tag "slides/scene4/css3.png", :class => "asset left-190 sp500 t120 z2"
+  =image_tag "slides/atc1.jpg", :class => "asset left-630 sp600 t120 z3"
+  =image_tag "slides/atc2.jpg", :class => "asset left-260 sp500 t120 z2"
   .info
-    %h2 Responsive <strong>HTML5 & CSS3</strong> Theme
-</section>  
+    %h2 Support your fellow <strong>ATC</strong> trainees
+    <a href="http://cpt.vateud.net/" target="_blank">cpt.vateud.net</a>
+</section>
