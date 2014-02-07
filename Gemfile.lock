@@ -84,6 +84,7 @@ GEM
       actionpack (>= 3.0)
     friendly_id (4.0.10.1)
       activerecord (>= 3.0, < 4.0)
+    fullcalendar-rails (1.6.4.0)
     haml (4.0.5)
       tilt
     has_scope (0.6.0.rc)
@@ -203,6 +204,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   feedzirra (~> 0.7.0)
   friendly_id (~> 4.0.9)
+  fullcalendar-rails (~> 1.6.4.0)
   haml (~> 4.0.3)
   jquery-rails (= 2.3.0)
   mercury-rails (~> 0.9.0)

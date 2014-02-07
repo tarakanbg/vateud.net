@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
- //= require_tree ./frontend 
+//= require_tree ./frontend
+//= require fullcalendar
+//= require gcal
 
 
 
@@ -22,10 +24,10 @@
 //     if ($("#feature_slider").hasClass("disabled")){
 //       // $('#feature_slider').fadeOut();
 //       $("#feature_slider").removeClass("disabled");
-//       // $("#pagination li").removeClass("active");     
-                   
-              
-//     }    
+//       // $("#pagination li").removeClass("active");
+
+
+//     }
 //   }, 8000);
 // });
 
@@ -35,3 +37,15 @@ jQuery(parent).trigger('initialize:frame');
 // jQuery(window).on('mercury:ready', function() {
 //   Mercury.saveUrl = '/pages';
 // });
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        events: {
+            url: 'http://www.google.com/calendar/feeds/4mmstomhihc2tt4p4utu8eqbdqesse67%40import.calendar.google.com/public/basic',
+            className: 'eud-event',           // an option!
+            currentTimezone: 'Zulu' // an option!
+        },
+        timeFormat: 'HH(:mm)',
+        firstDay: 1
+    });
+});
