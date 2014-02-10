@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.flexslider
 //= require bootstrap
-//= require_tree ./frontend
 //= require fullcalendar
 //= require gcal
 //= require bootstrap-sortable
+//= require jquery.easing
+//= require_tree ./frontend
 
 
 

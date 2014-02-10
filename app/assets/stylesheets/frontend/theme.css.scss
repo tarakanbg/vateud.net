@@ -14,8 +14,8 @@ body {
 a:hover {
 	text-decoration: none;
 }
-input[type="text"], 
-input[type="password"], 
+input[type="text"],
+input[type="password"],
 input[type="submit"],
 textarea {
 	font-family: 'Lato', Helvetica;
@@ -43,9 +43,9 @@ header {
     -moz-transition: margin .2s ease-in-out;
     transition: margin .2s ease-in-out;
 }
-.navbar.navbar-inverse .navbar-inner {  
+.navbar.navbar-inverse .navbar-inner {
     padding: 10px 0px 10px 0px;
-    background: #252528;    
+    background: #252528;
 }
 .navbar.navbar-inverse .navbar-inner.sticky {
     background: rgba(0,0,0,0.8);
@@ -121,7 +121,7 @@ header {
 	font-weight: 300;
 	font-size: 25px;
 	margin-bottom: 40px;
-	margin-left: 15px; 
+	margin-left: 15px;
 }
 
 /* recent posts */
@@ -376,25 +376,25 @@ header {
 	}
 }
 @media (min-width: 980px) {
-	
+
 }
 @media (max-width: 979px) {
-	.navbar.transparent.navbar-fixed-top, 
+	.navbar.transparent.navbar-fixed-top,
 	.navbar.home.navbar-fixed-top{
 		margin-bottom: 0px;
 	}
 	.navbar.transparent.navbar-inverse .navbar-inner {
 		background: #252528;
 	}
-	.navbar-inverse .nav-collapse .nav > li > a, 
+	.navbar-inverse .nav-collapse .nav > li > a,
 	.navbar-inverse .nav-collapse .dropdown-menu a {
 		color: #fff;
 		opacity: 0.7;
 	}
 }
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { 
-	.navbar.transparent.navbar-fixed-top, 
+@media (min-width: 768px) and (max-width: 979px) {
+	.navbar.transparent.navbar-fixed-top,
 	.navbar.home.navbar-fixed-top{
 		margin-bottom: -70px;
 		position: relative;
@@ -455,6 +455,4 @@ header {
 
 }
 
-/* Icons
--------------------------------------------------- */
 
