@@ -38,6 +38,10 @@ gem "fullcalendar-rails", "~> 1.6.4.0"
 
 gem "bootstrap_sortable_rails", "~> 0.1.3"
 gem "paper_trail", "~> 2.7.2"
+
 gem "airdata", "~> 0.3.2"
 gem "notams"
 gem "vatsim_metar"
+gem "vatsim_online"
+
+gem "leaflet-rails", "~> 0.7.2"

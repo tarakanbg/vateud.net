@@ -4,11 +4,14 @@
       %h3.center.regular= "#{@airport.data.name} (#{@icao}) Airport Profile"
     .row
       .span6
-        %h4.center Metar
+        %h4 Metar
         .center
           %pre= @airport.icao.metar
+        %h4 Map
+        #mapap
+        = render :partial => 'map_js'
 
-        %h4.center General details
+        %h4 General details
         %table.table.table-striped.table-bordered.table-hover.table-condensed.airport
           %tr
             %td.legend.strong ICAO:
@@ -28,10 +31,10 @@
                 %span.badge.badge-important ✘
           %tr
             %td.strong Country:
-            %td= link_to @airport.country.name, "/airports/country/#{@airport.country.code}"
+            %td= link_to @airport.country.name, "/countries/#{@airport.country.code}"
           %tr
             %td.strong vACC:
-            %td= link_to @airport.country.subdivision.name, "/subdivisions/#{@airport.country.subdivision.code}"
+            %td= link_to @airport.country.subdivision.name, "/countries/#{@airport.country.code}"
           %tr
             %td.strong.center{:colspan => 2} Description:
           %tr
@@ -62,15 +65,8 @@
           %tr
             %td.strong Longitude:
             %td= @airport.data.lon
-          %tr
-            %td.center{:colspan => 2}= link_to "#{@airport.icao} Charts", "/charts/#{@airport.icao}"
-          %tr
-            %td.center{:colspan => 2}= link_to "#{@airport.icao} Notams", "/notams/#{@airport.icao}"
-          %tr
-            %td.center{:colspan => 2}= link_to "#{@airport.icao} Online stations", "/online/atc/#{@airport.icao}"
 
-
-        %h4.center Runways
+        %h4 Runways
         %table.table.table-striped.table-bordered.table-hover.table-condensed.airport-runway
           %tr
             %th Number
@@ -99,7 +95,63 @@
               %td= rwy.ils? ? rwy.ils_freq : "-"
               %td= raw(rwy.ils? ? rwy.ils_fac.to_s + "&deg;".html_safe : "-")
               %td= raw(rwy.glidepath.to_s + "&deg;".html_safe)
+        %h4 Who's Online
+        %table.table.table-hover.table-condensed
+          %thead
+            %tr
+              %th.online-hdg.center{:colspan => 4} ATC
+            %tr
+              %th{:colspan => 2} Position
+              %th{:colspan => 2} Name (Rating)
+          %tbody
+            - for atc in @atc
+              %tr
+                %td= link_to atc.callsign, image_path("logo.png"), :class => "preview", :title => "#{atc.callsign} - #{atc.frequency} <br/> Online since: #{atc.online_since} <br /> Remark: #{atc.atis_message}"
+                %td= atc.name + " (#{atc.rating})"
+            %tr
+              %th.online-hdg.center{:colspan => 4}= "Arrivals (#{@arrivals.count})"
+            %tr
+              %th Callsign
+              %th A/C
+              %th From
+              %th To
+            - for arrival in @arrivals
+              %tr
+                %td= link_to arrival.callsign, arrival.gcmap, :class => "preview", :title => "#{arrival.callsign} - #{arrival.name} <br /> #{arrival.aircraft} - #{arrival.groundspeed} kts - #{arrival.altitude} ft - sq #{arrival.transponder}"
+                %td= arrival.aircraft
+                %td= arrival.origin
+                %td= arrival.destination
+            %tr
+              %th.online-hdg.center{:colspan => 4}= "Departures (#{@departures.count})"
+            %tr
+              %th Callsign
+              %th A/C
+              %th From
+              %th To
+            - for departure in @departures
+              %tr
+                %td= link_to departure.callsign, departure.gcmap, :class => "preview", :title => "#{departure.callsign} - #{departure.name} <br /> #{departure.aircraft} - #{departure.groundspeed} kts - #{departure.altitude} ft - sq #{departure.transponder}"
+                %td= departure.aircraft
+                %td= departure.origin
+                %td= departure.destination
+
       .span6
+        %h4 Charts
+        %table.table.table-striped.table-hover.table-condensed.sortable
+          %thead
+            %tr
+              %th Name
+              %th Link
+              %th Cached
+          %tbody
+            - for chart in @charts
+              %tr
+                %td.small-caps= chart["name"].downcase
+                %td= link_to "Downolad", chart["url_aip"]
+                %td= link_to "Cached", chart["url_charts_aero"]
+        %h4 Notams
+        - for notam in @notams
+          %pre.notam= notam
 
 
 

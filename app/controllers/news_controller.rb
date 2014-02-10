@@ -3,12 +3,14 @@ class NewsController < ApplicationController
     @pages = Page.main.visible.in_menu
     @news = News.published
     @news = @news.paginate(:page => 1, :per_page => 9)
+    @pagetitle = "News"
   end
 
   def show
     @pages = Page.main.visible.in_menu
     @news = News.published.order("created_at DESC").limit(10)
     @news_post = News.find(params[:id])
+    @pagetitle = "#{@news_post.title}"
   end
 
   def mercury_update
@@ -17,7 +19,7 @@ class NewsController < ApplicationController
       #page.name = params[:content][:page_name][:value]
       page.post = params[:content][:news_content][:value]
       page.save!
-      render text: ""        
+      render text: ""
     end
   end
 end

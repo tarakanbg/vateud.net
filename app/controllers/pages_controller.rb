@@ -11,6 +11,8 @@ class PagesController < ApplicationController
       feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/VateudNewTasks")
       @tasks = feed.entries[0..2]
     end
+    @pagetitle = "#{@page.title}"
+
   end
 
   def move_left
@@ -21,7 +23,7 @@ class PagesController < ApplicationController
       redirect_to "/admin/pages/" + page.slug
     end
   end
-  
+
   def move_right
     if admin_user_signed_in? && current_admin_user.try(:page_editor?)
       page = Page.find(params[:id])
@@ -36,9 +38,9 @@ class PagesController < ApplicationController
       page =Page.find(params[:id])
       #page.name = params[:content][:page_name][:value]
       page.post = params[:content][:page_content][:value]
-      page.sidebar = params[:content][:page_sidebar][:value]
+      page.sidebar = params[:content][:page_sidebar][:value] if params[:content][:page_sidebar]
       page.save!
-      render text: ""        
+      render text: ""
     end
   end
 end

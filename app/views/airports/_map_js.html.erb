@@ -1,0 +1,11 @@
+<%= javascript_include_tag "leaflet" %>
+
+<script>
+  var map = L.map('mapap').setView([<%= @airport.data.lat.to_s + ", " + @airport.data.lon.to_s %>], 13);
+
+  L.tileLayer('http://{s}.tile.cloudmade.com/4158071964ec4f0ab71b6bdee349f895/997/256/{z}/{x}/{y}.png', {
+      attribution: 'Imagery: <a href="http://cloudmade.com">CloudMade</a>',
+      maxZoom: 18
+  }).addTo(map);
+
+</script>

@@ -6,7 +6,8 @@ class HomeController < ApplicationController
     @events = Event.future.limit(3)
     feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/VateudNewTasks")
     @tasks = feed.entries[0..2]
-    # @images = 
+    @pagetitle = "Welcome"
+    # @images =
   end
 
   # def mercury_update
@@ -15,8 +16,8 @@ class HomeController < ApplicationController
   #     #page.name = params[:content][:page_name][:value]
   #     page.post = params[:content][:page_content][:value]
   #     page.save!
-  #     render text: ""        
+  #     render text: ""
   #   end
   # end
-  
+
 end

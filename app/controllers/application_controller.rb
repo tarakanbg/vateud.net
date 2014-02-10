@@ -8,16 +8,16 @@ private
   def authenticate_admin_user!
     raise SecurityError unless current_admin_user.try(:page_editor?)
   end
-  
+
   rescue_from SecurityError do |exception|
     redirect_to root_url
   end
 
-  def after_sign_in_path_for(admin_user)
-    root_path
-  end
+  #def after_sign_in_path_for(resource)
+  #  root_url
+  #end
 
 
 
-  
+
 end

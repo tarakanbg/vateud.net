@@ -12,5 +12,6 @@
  *= require_tree ./frontend
  *= require fullcalendar
  *= require bootstrap-sortable
+ *= require leaflet
  */
 

@@ -7,4 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Layout.create(name: 'home', priority: 99)
+Layout.create(name: 'single', priority: 1)
+Layout.create(name: 'single_with_menu', priority: 2)
+Layout.create(name: 'sidebar', priority: 3)
+Layout.create(name: 'sidebar_with_menu', priority: 4)
 Page.create(name: 'Home', title: "Welcome", sidebar: "Edit me", layout_id: 1 )

@@ -4,7 +4,8 @@ class Page < ActiveRecord::Base
 
   attr_accessor :url
 
-  acts_as_nested_set  
+  acts_as_nested_set
+  has_paper_trail
 
   belongs_to :layout
 
@@ -12,7 +13,7 @@ class Page < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, :use => :slugged
-  
+
   scope :main, where(:parent_id => nil)
   scope :visible, where(:visible => true)
   scope :invisible, where(:visible => false)

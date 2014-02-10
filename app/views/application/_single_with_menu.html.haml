@@ -1,0 +1,10 @@
+#aboutus
+  .container
+    .section_header
+      %h3.center= @page.title
+    .row
+      .span3
+      .span9
+        .intro
+          #page_content.mercury-region{:data => {:mercury => "full"}}
+            =raw(@page.post)
