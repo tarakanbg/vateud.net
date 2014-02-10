@@ -4,10 +4,16 @@
       %th ICAO
       %th IATA
       %th Name
+      %th Major
   %tbody
     - for airport in @country.airports
       %tr
         %td= link_to airport.icao, "/airports/#{airport.icao}"
         %td= link_to airport.iata, "/airports/#{airport.icao}"
         %td= link_to airport.data.name.titlecase, "/airports/#{airport.icao}"
+        %td
+          - if airport.major?
+            %span.badge.badge-success ✓
+          - else
+            %span.badge.badge-important ✘
 %p.note * Click on table headers to dynamically sort data

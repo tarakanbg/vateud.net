@@ -6,15 +6,29 @@
       .span6
         .intro
           #page_content.mercury-region{:data => {:mercury => "full"}}
-            =raw(@page.post)  
+            =raw(@page.post)
       .span6
         .row
           .flexslider
             %ul.slides
               - for slide in random_horizontal_images(5)
                 %li= image_tag slide
-        .row        
-          #page_sidebar.sidebar-home.mercury-region{:data => {:mercury => "full"}}
-            =raw(@page.sidebar)  
+        .row
+          #page_sidebar.sidebar-home.section_header
+            %ul.home
+              %li
+                %h3.home.widel Need operational data?
+                %h3.home.spaced= link_to "api.vateud.net", "http://api.vateud.net", :target => "_blank"
+              %li
+                %h3.home.widel Need something done?
+                %h3.home.spaced= link_to "tasks.vateud.net", "http://tasks.vateud.net", :target => "_blank"
+              %li
+                %h3.home.widel Need pilot training?
+                %h3.home.spaced= link_to "ptd.vateud.net", "http://ptd.vateud.net", :target => "_blank"
+              %li
+                %h3.home.widel Need ATC examination?
+                %h3.home.spaced= link_to "atsimtest.com", "http://atsimtest.com", :target => "_blank"
+              %li
+                %h3.home.widel Need a reason to fly?
+                %h3.home.spaced= link_to "cpt.vateud.net", "http://cpt.vateud.net/", :target => "_blank"
 
-          

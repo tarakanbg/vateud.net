@@ -52,3 +52,8 @@ img.big_flag {float:left; width: 150px; margin-top: -15px; margin-bottom: -15px;
 #mapap { height: 250px; }
 pre.notam {font-size: smaller;}
 th.online-hdg {text-align: center; background-color: #404040; color: white;}
+ul.home {list-style-image:url(image_path('on.png')); margin-left: 80px; margin-right: auto;}
+.sidebar-home {margin-left: auto; margin-right: auto; width: 100%;}
+.section_header h3.home {border-bottom: none;}
+.section_header h3.home.spaced {margin-left: 20px;}
+.widel {min-width: 250px;}
