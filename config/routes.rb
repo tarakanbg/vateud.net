@@ -34,6 +34,7 @@ VateudNet::Application.routes.draw do
   get 'events' => 'events#index'
   get 'countries' => 'countries#index'
   get 'countries/:id' => 'countries#show'
+  get 'airports/:id' => 'airports#show'
 
 
   get 'news/:id' => 'news#show', :as => :news

@@ -51,18 +51,10 @@
             =image_tag "maps/#{@country.code.downcase}.gif", :class => "image_map"
             .country-airports
               %h3 Country Airports
-              %table.table.table-striped.table-hover.table-condensed.sortable
-                %thead
-                  %tr
-                    %th ICAO
-                    %th IATA
-                    %th Name
-                %tbody
-                  - for airport in @country.airports
-                    %tr
-                      %td= link_to airport.icao, "/airports/#{airport.icao}"
-                      %td= link_to airport.iata, "/airports/#{airport.icao}"
-                      %td= link_to airport.data.name.titlecase, "/airports/#{airport.icao}"
-              %p.note * Click on table headers to dynamically sort data
-
-
+              = airports
+            .country-events
+              %h3 Upcoming Events
+              = upcoming_events
+            .country-events
+              %h3 Previous Events
+              = previous_events

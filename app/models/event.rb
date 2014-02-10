@@ -5,5 +5,6 @@ class Event < ActiveRecord::Base
   validates :title, :description, :starts, :ends, :subtitle, :airports, :presence => true
 
   scope :future, where("ends >= ?", Time.now)
+  scope :past, where("ends <= ?", Time.now)
 
 end

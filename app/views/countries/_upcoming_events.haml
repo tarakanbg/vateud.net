@@ -1,0 +1,10 @@
+%table.table.table-striped.table-hover.table-condensed.sortable
+  %thead
+    %tr
+      %th Start
+      %th Title
+  %tbody
+    - for event in @country.subdivision.events.future.limit(3)
+      %tr
+        %td= event.starts
+        %td= link_to event.title, "http://api.vateud.net/events/#{event.id}"

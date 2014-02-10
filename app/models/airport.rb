@@ -22,5 +22,10 @@ class Airport < ActiveRecord::Base
     Airdata::Airport.find_by_icao(self.icao.upcase)
   end
 
+  def charts_from_api
+    response = Curl::Easy.http_get("api.vateud.net/charts/#{self.icao}.json")
+    JSON.parse(response.body_str)
+  end
+
 
 end

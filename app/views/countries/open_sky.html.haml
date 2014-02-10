@@ -1,0 +1,19 @@
+#aboutus
+  .container
+    .section_header
+      %h3.center.regular= @country.name
+    .row
+      .span3
+        = render :partial => 'country_list'
+      .span9
+        .row
+          .span5
+            = image_tag "flags/#{@country.code.downcase}.png", :class => "big_flag"
+            .justify
+              %p This country has no vACC associated with it and is part of VATEUD Open Sky Programme.
+
+          .span4
+            =image_tag "maps/#{@country.code.downcase}.gif", :class => "image_map"
+            .country-airports
+              %h3 Country Airports
+              = airports
