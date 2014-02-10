@@ -16,6 +16,7 @@
 //= require_tree ./frontend
 //= require fullcalendar
 //= require gcal
+//= require bootstrap-sortable
 
 
 

@@ -15,6 +15,7 @@
           %li= link_to "HOME", root_url
           %li= link_to "NEWS", :controller => "news"
           %li= link_to "EVENTS", :controller => "events"
+          %li= link_to "COUNTRIES", :controller => "countries"
           - for page in @pages
             - if page.children.visible.in_menu.count > 0
               %li.dropdown
@@ -24,10 +25,10 @@
                 </a>
                 %ul.dropdown-menu
                   - for child in page.children.visible.in_menu
-                    %li= link_to child.name.upcase, child.url 
+                    %li= link_to child.name.upcase, child.url
             - elsif page.slug == "home"
-              - next  
-            - else      
+              - next
+            - else
               %li=link_to page.name.upcase, page.url
           %li= link_to "FORUMS", "http://forum.vateud.net/", :target => "_blank"
-             
+

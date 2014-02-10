@@ -29,9 +29,12 @@ VateudNet::Application.routes.draw do
   # resources :pages do
   #   member { put :mercury_update }
   # end
-  
+
   get 'news' => 'news#index'
   get 'events' => 'events#index'
+  get 'countries' => 'countries#index'
+  get 'countries/:id' => 'countries#show'
+
 
   get 'news/:id' => 'news#show', :as => :news
 

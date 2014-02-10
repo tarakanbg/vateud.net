@@ -11,5 +11,6 @@
  *= require_self
  *= require_tree ./frontend
  *= require fullcalendar
+ *= require bootstrap-sortable
  */
 

@@ -1,0 +1,26 @@
+#aboutus
+  .container
+    .section_header
+      %h3.center.regular Countries and vACCs
+    .row
+      .span3
+        = render :partial => 'country_list'
+
+      .span9
+        %h4 VATEUD approved squawk ranges: *
+        %table.table.table-striped.table-hover.table-condensed.sortable
+          %thead
+            %tr
+              %th Facility
+              %th Position
+              %th Start
+              %th End
+          %tbody
+            - for sq in @squawks
+              %tr
+                %td= sq.facility
+                %td= sq.position
+                %td= sq.start
+                %td= sq.end
+        .note * Click table headers to dynamically sort the data
+

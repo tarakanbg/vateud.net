@@ -1,0 +1,6 @@
+%ul.nav.nav-list
+  %li.nav-header VATEUD Countries List:
+  - for country in @countries
+    %li.country{:class => ("active" if @country && country.code == @country.code)}
+      = image_tag "flags/#{country.code.downcase}_small.png", :class => "flag_list"
+      = link_to country.name, "/countries/#{country.code}"

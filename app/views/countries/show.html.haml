@@ -1,0 +1,68 @@
+#aboutus
+  .container
+    .section_header
+      %h3.center.regular= @country.name + " (#{@country.subdivision.name})"
+    .row
+      .span3
+        = render :partial => 'country_list'
+      .span9
+        .row
+          .span5
+            = image_tag "flags/#{@country.code.downcase}.png", :class => "big_flag"
+            .justify
+              = raw(@country.subdivision.introtext)
+              .btn-group.vacc-links
+                = link_to "vACC Website", @country.subdivision.website, :target => "_blank", :class => "btn btn-success"
+                = link_to "Country Members", "http://api.vateud.net/countries/#{@country.code}", :target => "_blank", :class => "btn btn-info"
+                = link_to "vACC Members", "http://api.vateud.net/members/#{@country.subdivision.code}", :target => "_blank", :class => "btn btn-success"
+            .staff-lists
+              %h3 vACC Staff
+              %table.table.table-striped.table-hover.table-condensed.sortable
+                %thead
+                  %tr
+                    %th Callsign
+                    %th Position
+                    %th Name
+                %tbody
+                  - for staff in @country.subdivision.staff_members
+                    %tr
+                      %td= mail_to staff.email, staff.callsign, :encode => :javascript
+                      %td= staff.position
+                      %td= staff.name
+              %p.note * Click on table headers to dynamically sort data
+            .vacc-freqs
+              %h3 Approved ATC frequencies
+              %table.table.table-striped.table-hover.table-condensed.sortable
+                %thead
+                  %tr
+                    %th Callsign
+                    %th Position Name
+                    %th Frequency
+                %tbody
+                  - for freq in @country.subdivision.frequencies
+                    %tr
+                      %td= freq.callsign
+                      %td= freq.name
+                      %td= number_with_precision(freq.freq, :precision => 3)
+              %p.note * Click on table headers to dynamically sort data
+
+
+          .span4
+            =image_tag "maps/#{@country.code.downcase}.gif", :class => "image_map"
+            .country-airports
+              %h3 Country Airports
+              %table.table.table-striped.table-hover.table-condensed.sortable
+                %thead
+                  %tr
+                    %th ICAO
+                    %th IATA
+                    %th Name
+                %tbody
+                  - for airport in @country.airports
+                    %tr
+                      %td= link_to airport.icao, "/airports/#{airport.icao}"
+                      %td= link_to airport.iata, "/airports/#{airport.icao}"
+                      %td= link_to airport.data.name.titlecase, "/airports/#{airport.icao}"
+              %p.note * Click on table headers to dynamically sort data
+
+
