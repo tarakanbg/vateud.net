@@ -12,11 +12,11 @@ _Work in progress_
 * Airport general details: 30 minutes
 * Airport metar: 10 minutes
 
-* Country ATC frequencies: 30 minutes
+* Country ATC frequencies: 3 hours
 * Country events: 20 minutes
 * Country airports: 20 minutes
 * Country staff list: 20 minutes
-* Squawk ranges: 30 minutes
+* Squawk ranges: 12 hours
 
 * Upcoming events (frontpage): 15 minutes
 * Latest tasks (frontpage): 15 minutes

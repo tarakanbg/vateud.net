@@ -8,10 +8,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'sqlite3', :group => :development
-gem 'quiet_assets', :group => :development
-gem "thin", "~> 1.5.1", :group => :development
-
 # Data libs
 gem "pg", "~> 0.17.1"
 gem "mysql2", "~> 0.3.14"

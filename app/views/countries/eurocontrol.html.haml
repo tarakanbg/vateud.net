@@ -33,7 +33,7 @@
 
             .vacc-freqs
               %h3 Approved ATC frequencies
-              - cache("#{@subdivision.code}_atc_frequencies", :expires_in => 30.minutes) do
+              - cache("#{@subdivision.code}_atc_frequencies", :expires_in => 3.hours) do
                 %table.table.table-striped.table-hover.table-condensed.sortable
                   %thead
                     %tr

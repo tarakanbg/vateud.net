@@ -21,7 +21,7 @@
                 = render :partial => 'staff_list'
             .vacc-freqs
               %h3 Approved ATC frequencies
-              - cache("#{@country.code}_atc_frequencies", :expires_in => 30.minutes) do
+              - cache("#{@country.code}_atc_frequencies", :expires_in => 3.hours) do
                 = render :partial => 'atc_frequencies'
 
           .span4
