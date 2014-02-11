@@ -27,6 +27,11 @@ class Airport < ActiveRecord::Base
     JSON.parse(response.body)
   end
 
+  def v_metar
+    response = Faraday.get("http://metar.vatsim.net/#{self.icao}")
+    response.body.to_s
+  end
+
 
 
 

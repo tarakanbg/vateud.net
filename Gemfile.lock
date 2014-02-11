@@ -212,8 +212,6 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    vatsim_metar (0.2.3)
-      curb (~> 0.8.4)
     vatsim_online (0.8.2)
       curb (~> 0.8.4)
       gcmapper (~> 0.4.0)
@@ -255,6 +253,5 @@ DEPENDENCIES
   rails (= 3.2.16)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
-  vatsim_metar
   vatsim_online
   yaml_db (~> 0.2.3)

@@ -11,7 +11,7 @@
         %h4 Metar
         - cache("#{@icao}_metar", :expires_in => 10.minutes) do
           .center
-            %pre= @airport.icao.metar
+            %pre= @airport.v_metar
 
         - cache("#{@icao}_airport_data", :expires_in => 30.minutes) do
           %h4 General details

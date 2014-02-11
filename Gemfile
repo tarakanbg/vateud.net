@@ -42,5 +42,5 @@ gem "faraday", "~> 0.9.0"
 # Aviation
 gem "airdata", "~> 0.3.2"
 gem "notams"
-gem "vatsim_metar"
+#gem "vatsim_metar"
 gem "vatsim_online"
