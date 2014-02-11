@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require jquery.flexslider
 //= require bootstrap
+//= require jquery.flexslider
 //= require fullcalendar
 //= require gcal
 //= require bootstrap-sortable
@@ -56,3 +56,11 @@ $(document).ready(function() {
         firstDay: 1
     });
 });
+
+$(document).ready(function(){
+    $('.navbar .dropdown').hover(function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+    }, function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+    });
+    n})

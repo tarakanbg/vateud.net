@@ -24,12 +24,12 @@
           %li= link_to "COUNTRIES", :controller => "countries"
           - for page in @pages
             - if page.children.visible.in_menu.count > 0
-              %li.dropdown
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              %li.dropdown{"data-no-turbolink" => true}
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-no-turbolink>
                 = page.name.upcase
                 <b class="caret"></b>
                 </a>
-                %ul.dropdown-menu
+                %ul.dropdown-menu{"data-no-turbolink" => true}
                   - for child in page.children.visible.in_menu
                     %li= link_to child.name.upcase, child.url
             - elsif page.slug == "home"
