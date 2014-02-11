@@ -59,4 +59,17 @@ ActiveAdmin.register Page do
     # end
   end
 
+  filter :parent
+  filter :layout
+  filter :title
+  filter :post
+  filter :post
+  filter :sidebar
+  filter :description
+  filter :keywords
+  filter :abstract
+  filter :visible
+  filter :menu
+  filter :created_at
+  filter :updated_at
 end

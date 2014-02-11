@@ -1,5 +1,3 @@
-<%= javascript_include_tag "leaflet" %>
-
 <script>
   var map = L.map('mapap').setView([<%= @airport.data.lat.to_s + ", " + @airport.data.lon.to_s %>], 12);
 

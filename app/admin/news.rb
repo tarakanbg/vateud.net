@@ -20,8 +20,8 @@ ActiveAdmin.register News do
     f.inputs "Details" do
       f.input :title
       f.input :author
-      f.input :slug
       f.input :published
+      f.input :created_at
     end
     f.inputs "SEO" do
       f.input :description, :as => :string
@@ -29,5 +29,13 @@ ActiveAdmin.register News do
     end
     f.buttons
   end
+
+  filter :title
+  filter :author
+  filter :published
+  filter :created_at
+  filter :updated_at
+  filter :description
+  filter :keywords
 
 end

@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.flexslider
 //= require bootstrap
@@ -18,7 +19,9 @@
 //= require gcal
 //= require bootstrap-sortable
 //= require jquery.easing
+//= require jquery.spin
 //= require_tree ./frontend
+//= require turbolinks
 
 
 

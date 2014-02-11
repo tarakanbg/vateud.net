@@ -12,9 +12,13 @@
       / </a>
       .nav-collapse.collapse
         %ul.nav.pull-right
-          %li= link_to "HOME", root_url
+          <li data-no-turbolink>
+          = link_to "HOME", root_url
+          </li>
           %li= link_to "NEWS", :controller => "news"
-          %li= link_to "EVENTS", :controller => "events"
+          <li data-no-turbolink>
+          = link_to "EVENTS", :controller => "events"
+          </li>
           %li= link_to "COUNTRIES", :controller => "countries"
           - for page in @pages
             - if page.children.visible.in_menu.count > 0

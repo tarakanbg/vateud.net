@@ -21,6 +21,8 @@ gem "bootstrap-will_paginate", "~> 0.0.10"
 gem "bootstrap_sortable_rails", "~> 0.1.3"
 gem "mercury-rails", "~> 0.9.0"
 gem "feedzirra", "~> 0.7.0"
+gem "turbolinks", "~> 2.2.1"
+gem "jquery-turbolinks", "~> 2.0.1"
 
 # Frontend Visual fluff
 gem "jquery-rails", "2.3.0"
@@ -29,6 +31,7 @@ gem "leaflet-rails", "~> 0.7.2"
 gem "animate-rails", "~> 1.0.4"
 gem "flexslider", "~> 2.2.0"
 gem "jquery-easing-rails", "~> 0.0.1"
+gem "spinjs-rails", "~> 1.3"
 
 # Backend
 gem "activeadmin", "~> 0.6.1"
