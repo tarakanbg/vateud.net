@@ -23,9 +23,11 @@ class Airport < ActiveRecord::Base
   end
 
   def charts_from_api
-    response = Curl::Easy.http_get("api.vateud.net/charts/#{self.icao}.json")
-    JSON.parse(response.body_str)
+    response = Faraday.get("http://api.vateud.net/charts/#{self.icao}.json")
+    JSON.parse(response.body)
   end
+
+
 
 
 end

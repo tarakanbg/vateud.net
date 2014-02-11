@@ -37,6 +37,7 @@ gem "awesome_nested_set", "~> 2.1.6"
 gem "friendly_id", "~> 4.0.9"
 gem "paperclip", "~> 3.5.1"
 gem "paper_trail", "~> 2.7.2"
+gem "faraday", "~> 0.9.0"
 
 # Aviation
 gem "airdata", "~> 0.3.2"
