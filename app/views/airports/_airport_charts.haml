@@ -5,7 +5,7 @@
       %th Link
       %th Cached
   %tbody
-    - for chart in @charts
+    - for chart in @airport.charts_from_api
       %tr
         %td.small-caps= chart["name"].downcase
         %td= link_to "Downolad", chart["url_aip"]
