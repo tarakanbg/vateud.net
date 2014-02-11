@@ -1,10 +1,12 @@
 #aboutus
   .container
-    .section_header
-      %h3.center= @page.title
     .row
       .span3
+        = render :partial => 'siblings_menu'
+
       .span9
+        .section_header
+          %h3.center= @page.title
         .intro
           #page_content.mercury-region{:data => {:mercury => "full"}}
             =raw(@page.post)

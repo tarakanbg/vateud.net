@@ -1,6 +1,6 @@
-== vateud.net
+# vateud.net
 
-=== Work in progress
+_Work in progress_
 
 ## Fragment caching
 
@@ -17,3 +17,6 @@
 * Country airports: 20 minutes
 * Country staff list: 20 minutes
 * Squawk ranges: 30 minutes
+
+* Upcoming events (frontpage): 15 minutes
+* Latest tasks (frontpage): 15 minutes

@@ -12,6 +12,9 @@ class PagesController < ApplicationController
       @tasks = feed.entries[0..2]
     end
     @pagetitle = "#{@page.title}"
+    if @page.abstract? && @page.children.count > 0
+      redirect_to @page.children.first.url and return
+    end
 
   end
 

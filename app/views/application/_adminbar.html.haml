@@ -5,15 +5,17 @@
         - if @page.slug == "home"
           = link_to raw('<i class="icon-edit icon-white"></i> Edit text'), "/editor/" + @page.slug, id: "edit_link", data: { save_url: "/pages/#{@page.id}"}, :class => "btn btn-success btn-small" if @page
           = link_to raw('<i class="icon-wrench icon-white"></i> Page settings'), "/admin/pages/#{@page.id}/edit", :class => "btn btn-primary btn-small" if @page
+          = link_to raw('<i class="icon-plus-sign icon-white"></i> New page'), "/admin/pages/new", :class => "btn btn-success btn-small"
         - else
           = link_to raw('<i class="icon-edit icon-white"></i> Edit text'), "/editor" + request.path, id: "edit_link", data: { save_url: "/#{controller_name}/#{@page.id}"}, :class => "btn btn-success btn-small" if @page
           = link_to raw('<i class="icon-wrench icon-white"></i> Page settings'), "/admin/#{controller_name}/#{@page.id}/edit", :class => "btn btn-primary btn-small" if @page
+          = link_to raw('<i class="icon-plus-sign icon-white"></i> New page'), "/admin/pages/new", :class => "btn btn-success btn-small"
       - if @news_post
         = link_to raw('<i class="icon-edit icon-white"></i> Edit news item'), "/editor" + request.path, id: "edit_link", data: { save_url: "/#{controller_name}/#{@news_post.id}"}, :class => "btn btn-success btn-small" if @news_post
         = link_to raw('<i class="icon-wrench icon-white"></i> News item settings'), "/admin/#{controller_name}/#{@news_post.id}/edit", :class => "btn btn-primary btn-small" if @news_post
+        = link_to raw('<i class="icon-plus-sign icon-white"></i> New News Item'), "/admin/news/new", :class => "btn btn-success btn-small"
 
       = link_to raw('<i class="icon-tasks icon-white"></i> Admin panel'), "/admin", :class => "btn btn-primary btn-small"
       = link_to raw('<i class="icon-user icon-white"></i> Logout'), "/admin/logout", :class => "btn btn-danger btn-small"
     .adminname  Logged in as: <strong>#{current_admin_user.name}</strong>
-    
-    
+

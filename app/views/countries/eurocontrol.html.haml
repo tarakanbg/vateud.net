@@ -1,0 +1,53 @@
+#aboutus
+  .container
+    .section_header
+      %h3.center.regular Eurocenter vACC
+    .row
+      .span3
+        = render :partial => 'country_list'
+      .span9
+        .row
+          .span5
+            = image_tag "flags/eu.png", :class => "big_flag"
+            .justify
+              = raw(@subdivision.introtext)
+              .btn-group.vacc-links
+                = link_to "vACC Website", @subdivision.website, :target => "_blank", :class => "btn btn-success"
+                = link_to "vACC Members", "http://api.vateud.net/members/#{@subdivision.code}", :target => "_blank", :class => "btn btn-success"
+            .staff-lists
+              %h3 vACC Staff
+              - cache("#{@subdivision.code}_staff_list", :expires_in => 20.minutes) do
+                %table.table.table-striped.table-hover.table-condensed.sortable
+                  %thead
+                    %tr
+                      %th Callsign
+                      %th Position
+                      %th Name
+                  %tbody
+                    - for staff in @subdivision.staff_members
+                      %tr
+                        %td= mail_to staff.email, staff.callsign, :encode => :javascript
+                        %td= staff.position
+                        %td= staff.name
+                %p.note * Click on table headers to dynamically sort data
+
+            .vacc-freqs
+              %h3 Approved ATC frequencies
+              - cache("#{@subdivision.code}_atc_frequencies", :expires_in => 30.minutes) do
+                %table.table.table-striped.table-hover.table-condensed.sortable
+                  %thead
+                    %tr
+                      %th Callsign
+                      %th Position Name
+                      %th Frequency
+                  %tbody
+                    - for freq in @subdivision.frequencies
+                      %tr
+                        %td= freq.callsign
+                        %td= freq.name
+                        %td= number_with_precision(freq.freq, :precision => 3)
+                %p.note * Click on table headers to dynamically sort data
+
+
+          .span4
+            =image_tag "maps/eu.gif", :class => "image_map"

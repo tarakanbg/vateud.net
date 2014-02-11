@@ -9,10 +9,16 @@ class CountriesController < ApplicationController
   def show
     @pages = Page.main.visible.in_menu
     @countries = Country.eud.reorder("name ASC")
-    @country = Country.where(:code => params[:id]).first
-    @pagetitle = "#{@country.name} Country Details"
-    unless @country.subdivision
-      render "open_sky" and return
+    if params[:id] == "EU"
+      @pagetitle = "Eurocontrol vACC Details"
+      @subdivision = Subdivision.find_by_code("EUC")
+      render "eurocontrol" and return
+    else
+      @country = Country.where(:code => params[:id]).first
+      @pagetitle = "#{@country.name} Country Details"
+      unless @country.subdivision
+        render "open_sky" and return
+      end
     end
   end
 end

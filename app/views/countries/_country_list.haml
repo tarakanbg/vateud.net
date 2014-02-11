@@ -1,5 +1,8 @@
 %ul.nav.nav-list
-  %li.nav-header VATEUD Countries List:
+  %li.nav-header VATEUD Countries / vACCs List:
+  %li.country{:class => ("active" if params[:id] == "EU")}
+    = image_tag "flags/eu_small.png", :class => "flag_list"
+    = link_to "Eurocenter vACC", "/countries/EU"
   - for country in @countries
     %li.country{:class => ("active" if @country && country.code == @country.code)}
       = image_tag "flags/#{country.code.downcase}_small.png", :class => "flag_list"
