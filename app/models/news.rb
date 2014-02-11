@@ -1,5 +1,5 @@
 class News < ActiveRecord::Base
-  attr_accessible :author_id, :description, :keywords, :post, :published, :slug, :title
+  attr_accessible :author_id, :description, :keywords, :post, :published, :slug, :title, :created_at
 
   extend FriendlyId
   friendly_id :title, :use => :slugged

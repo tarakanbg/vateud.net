@@ -21,7 +21,10 @@ ActiveAdmin.register News do
       f.input :title
       f.input :author
       f.input :published
-      f.input :created_at
+      if !f.object.new_record?
+        f.input :created_at, :as => :datepicker
+      else
+      end
     end
     f.inputs "SEO" do
       f.input :description, :as => :string
