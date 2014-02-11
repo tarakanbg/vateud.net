@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @pages = Page.main.visible.in_menu
     @page = Page.find(params[:id])
     if @page.slug == "home"
-      @news = News.published.limit(3)
+      @news = News.published.reorder("created_at DESC").limit(3)
       @events = Event.future.limit(3)
       feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/VateudNewTasks")
       @tasks = feed.entries[0..2]
