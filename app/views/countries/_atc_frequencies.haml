@@ -1,0 +1,13 @@
+%table.table.table-striped.table-hover.table-condensed.sortable
+  %thead
+    %tr
+      %th Callsign
+      %th Position Name
+      %th Frequency
+  %tbody
+    - for freq in @country.subdivision.frequencies
+      %tr
+        %td= freq.callsign
+        %td= freq.name
+        %td= number_with_precision(freq.freq, :precision => 3)
+%p.note * Click on table headers to dynamically sort data

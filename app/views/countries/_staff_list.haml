@@ -1,0 +1,13 @@
+%table.table.table-striped.table-hover.table-condensed.sortable
+  %thead
+    %tr
+      %th Callsign
+      %th Position
+      %th Name
+  %tbody
+    - for staff in @country.subdivision.staff_members
+      %tr
+        %td= mail_to staff.email, staff.callsign, :encode => :javascript
+        %td= staff.position
+        %td= staff.name
+%p.note * Click on table headers to dynamically sort data

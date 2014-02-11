@@ -17,44 +17,22 @@
                 = link_to "vACC Members", "http://api.vateud.net/members/#{@country.subdivision.code}", :target => "_blank", :class => "btn btn-success"
             .staff-lists
               %h3 vACC Staff
-              %table.table.table-striped.table-hover.table-condensed.sortable
-                %thead
-                  %tr
-                    %th Callsign
-                    %th Position
-                    %th Name
-                %tbody
-                  - for staff in @country.subdivision.staff_members
-                    %tr
-                      %td= mail_to staff.email, staff.callsign, :encode => :javascript
-                      %td= staff.position
-                      %td= staff.name
-              %p.note * Click on table headers to dynamically sort data
+              - cache("#{@country.code}_staff_list", :expires_in => 20.minutes) do
+                = render :partial => 'staff_list'
             .vacc-freqs
               %h3 Approved ATC frequencies
-              %table.table.table-striped.table-hover.table-condensed.sortable
-                %thead
-                  %tr
-                    %th Callsign
-                    %th Position Name
-                    %th Frequency
-                %tbody
-                  - for freq in @country.subdivision.frequencies
-                    %tr
-                      %td= freq.callsign
-                      %td= freq.name
-                      %td= number_with_precision(freq.freq, :precision => 3)
-              %p.note * Click on table headers to dynamically sort data
-
+              - cache("#{@country.code}_atc_frequencies", :expires_in => 30.minutes) do
+                = render :partial => 'atc_frequencies'
 
           .span4
             =image_tag "maps/#{@country.code.downcase}.gif", :class => "image_map"
-            .country-airports
-              %h3 Country Airports
-              = airports
-            .country-events
-              %h3 Upcoming Events
-              = upcoming_events
-            .country-events
-              %h3 Previous Events
-              = previous_events
+            - cache("#{@country.code}_events_airports", :expires_in => 20.minutes) do
+              .country-airports
+                %h3 Country Airports
+                = airports
+              .country-events
+                %h3 Upcoming Events
+                = upcoming_events
+              .country-events
+                %h3 Previous Events
+                = previous_events

@@ -1,0 +1,53 @@
+%table.table.table-striped.table-bordered.table-hover.table-condensed.airport
+  %tr
+    %td.legend.strong ICAO:
+    %td= @airport.icao
+  %tr
+    %td.strong IATA:
+    %td= @airport.iata
+  %tr
+    %td.strong Name (city):
+    %td= @airport.data.name.titlecase
+  %tr
+    %td.strong Major:
+    %td
+      - if @airport.major?
+        %span.badge.badge-success ✓
+      - else
+        %span.badge.badge-important ✘
+  %tr
+    %td.strong Country:
+    %td= link_to @airport.country.name, "/countries/#{@airport.country.code}"
+  %tr
+    %td.strong vACC:
+    %td= link_to @airport.country.subdivision.name, "/countries/#{@airport.country.code}"
+  %tr
+    %td.strong.center{:colspan => 2} Description:
+  %tr
+    %td{:colspan => 2}= raw(@airport.description)
+  %tr
+    %td.strong.center{:colspan => 2} Scenery links:
+  %tr
+    %td.strong FS9 scenery:
+    %td= link_to("Download", @airport.scenery_fs9_link) unless @airport.scenery_fs9_link.blank?
+  %tr
+    %td.strong FSX/P3D scenery:
+    %td= link_to("Download", @airport.scenery_fsx_link) unless @airport.scenery_fsx_link.blank?
+  %tr
+    %td.strong XP scenery:
+    %td= link_to("Download", @airport.scenery_xp_link) unless @airport.scenery_xp_link.blank?
+  %tr
+    %td.strong Elevation:
+    %td= "#{@airport.data.elevation} ft."
+  %tr
+    %td.strong Transition altitude:
+    %td= "#{@airport.data.ta} ft."
+  %tr
+    %td.strong MSA:
+    %td= "#{@airport.data.msa} ft."
+  %tr
+    %td.strong Latitude:
+    %td= @airport.data.lat
+  %tr
+    %td.strong Longitude:
+    %td= @airport.data.lon

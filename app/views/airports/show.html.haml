@@ -4,154 +4,37 @@
       %h3.center.regular= "#{@airport.data.name} (#{@icao}) Airport Profile"
     .row
       .span6
-        %h4 Metar
-        .center
-          %pre= @airport.icao.metar
         %h4 Map
-        #mapap
-        = render :partial => 'map_js'
+        - cache("#{@icao}_map", :expires_in => 23.hours) do
+          #mapap
+          = render :partial => 'map_js'
+        %h4 Metar
+        - cache("#{@icao}_metar", :expires_in => 10.minutes) do
+          .center
+            %pre= @airport.icao.metar
 
-        %h4 General details
-        %table.table.table-striped.table-bordered.table-hover.table-condensed.airport
-          %tr
-            %td.legend.strong ICAO:
-            %td= @airport.icao
-          %tr
-            %td.strong IATA:
-            %td= @airport.iata
-          %tr
-            %td.strong Name (city):
-            %td= @airport.data.name.titlecase
-          %tr
-            %td.strong Major:
-            %td
-              - if @airport.major?
-                %span.badge.badge-success ✓
-              - else
-                %span.badge.badge-important ✘
-          %tr
-            %td.strong Country:
-            %td= link_to @airport.country.name, "/countries/#{@airport.country.code}"
-          %tr
-            %td.strong vACC:
-            %td= link_to @airport.country.subdivision.name, "/countries/#{@airport.country.code}"
-          %tr
-            %td.strong.center{:colspan => 2} Description:
-          %tr
-            %td{:colspan => 2}= raw(@airport.description)
-          %tr
-            %td.strong.center{:colspan => 2} Scenery links:
-          %tr
-            %td.strong FS9 scenery:
-            %td= link_to("Download", @airport.scenery_fs9_link) unless @airport.scenery_fs9_link.blank?
-          %tr
-            %td.strong FSX/P3D scenery:
-            %td= link_to("Download", @airport.scenery_fsx_link) unless @airport.scenery_fsx_link.blank?
-          %tr
-            %td.strong XP scenery:
-            %td= link_to("Download", @airport.scenery_xp_link) unless @airport.scenery_xp_link.blank?
-          %tr
-            %td.strong Elevation:
-            %td= "#{@airport.data.elevation} ft."
-          %tr
-            %td.strong Transition altitude:
-            %td= "#{@airport.data.ta} ft."
-          %tr
-            %td.strong MSA:
-            %td= "#{@airport.data.msa} ft."
-          %tr
-            %td.strong Latitude:
-            %td= @airport.data.lat
-          %tr
-            %td.strong Longitude:
-            %td= @airport.data.lon
+        - cache("#{@icao}_airport_data", :expires_in => 30.minutes) do
+          %h4 General details
+          = render :partial => 'airport_data'
 
-        %h4 Runways
-        %table.table.table-striped.table-bordered.table-hover.table-condensed.airport-runway
-          %tr
-            %th Number
-            %th Course
-            %th Length
-            %th Elevation
-            %th Lat
-            %th Lon
-            %th ILS
-            %th ILS freq
-            %th ILS FAC
-            %th GP
-          - for rwy in @airport.data.runways
-            %tr
-              %td= rwy.number
-              %td= raw(rwy.course.to_s + "&deg;".html_safe)
-              %td= (rwy.length * 0.3048).round.to_s + " m"
-              %td= rwy.elevation.to_s + "ft "
-              %td= number_with_precision(rwy.lat, :precision => 2)
-              %td= number_with_precision(rwy.lon, :precision => 2)
-              %td
-                - if rwy.ils?
-                  %span.badge.badge-success ✓
-                - else
-                  %span.badge.badge-important ✘
-              %td= rwy.ils? ? rwy.ils_freq : "-"
-              %td= raw(rwy.ils? ? rwy.ils_fac.to_s + "&deg;".html_safe : "-")
-              %td= raw(rwy.glidepath.to_s + "&deg;".html_safe)
+          %h4 Runways
+          = render :partial => 'runways'
+
         %h4 Who's Online
-        %table.table.table-hover.table-condensed
-          %thead
-            %tr
-              %th.online-hdg.center{:colspan => 4} ATC
-            %tr
-              %th{:colspan => 2} Position
-              %th{:colspan => 2} Name (Rating)
-          %tbody
-            - for atc in @atc
-              %tr
-                %td= link_to atc.callsign, image_path("logo.png"), :class => "preview", :title => "#{atc.callsign} - #{atc.frequency} <br/> Online since: #{atc.online_since} <br /> Remark: #{atc.atis_message}"
-                %td= atc.name + " (#{atc.rating})"
-            %tr
-              %th.online-hdg.center{:colspan => 4}= "Arrivals (#{@arrivals.count})"
-            %tr
-              %th Callsign
-              %th A/C
-              %th From
-              %th To
-            - for arrival in @arrivals
-              %tr
-                %td= link_to arrival.callsign, arrival.gcmap, :class => "preview", :title => "#{arrival.callsign} - #{arrival.name} <br /> #{arrival.aircraft} - #{arrival.groundspeed} kts - #{arrival.altitude} ft - sq #{arrival.transponder}"
-                %td= arrival.aircraft
-                %td= arrival.origin
-                %td= arrival.destination
-            %tr
-              %th.online-hdg.center{:colspan => 4}= "Departures (#{@departures.count})"
-            %tr
-              %th Callsign
-              %th A/C
-              %th From
-              %th To
-            - for departure in @departures
-              %tr
-                %td= link_to departure.callsign, departure.gcmap, :class => "preview", :title => "#{departure.callsign} - #{departure.name} <br /> #{departure.aircraft} - #{departure.groundspeed} kts - #{departure.altitude} ft - sq #{departure.transponder}"
-                %td= departure.aircraft
-                %td= departure.origin
-                %td= departure.destination
+        - cache("#{@icao}_who_online", :expires_in => 5.minutes) do
+          = render :partial => 'who_online'
 
       .span6
+        %h4 VFR Chart
+        - cache("#{@icao}_vfr_chart", :expires_in => 22.hours) do
+          = render :partial => 'skyvector'
         %h4 Charts
-        %table.table.table-striped.table-hover.table-condensed.sortable
-          %thead
-            %tr
-              %th Name
-              %th Link
-              %th Cached
-          %tbody
-            - for chart in @charts
-              %tr
-                %td.small-caps= chart["name"].downcase
-                %td= link_to "Downolad", chart["url_aip"]
-                %td= link_to "Cached", chart["url_charts_aero"]
+        - cache("#{@icao}_charts", :expires_in => 6.hours) do
+          = render :partial => 'airport_charts'
         %h4 Notams
-        - for notam in @notams
-          %pre.notam= notam
+        - cache("#{@icao}_notams", :expires_in => 8.hours) do
+          - for notam in @notams
+            %pre.notam= notam
 
 
 

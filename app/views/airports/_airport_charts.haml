@@ -1,0 +1,12 @@
+%table.table.table-striped.table-hover.table-condensed.sortable
+  %thead
+    %tr
+      %th Name
+      %th Link
+      %th Cached
+  %tbody
+    - for chart in @charts
+      %tr
+        %td.small-caps= chart["name"].downcase
+        %td= link_to "Downolad", chart["url_aip"]
+        %td= link_to "Cached", chart["url_charts_aero"]

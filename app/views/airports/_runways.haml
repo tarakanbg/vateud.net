@@ -1,0 +1,28 @@
+%table.table.table-striped.table-bordered.table-hover.table-condensed.airport-runway
+  %tr
+    %th Number
+    %th Course
+    %th Length
+    %th Elevation
+    %th Lat
+    %th Lon
+    %th ILS
+    %th ILS freq
+    %th ILS FAC
+    %th GP
+  - for rwy in @airport.data.runways
+    %tr
+      %td= rwy.number
+      %td= raw(rwy.course.to_s + "&deg;".html_safe)
+      %td= (rwy.length * 0.3048).round.to_s + " m"
+      %td= rwy.elevation.to_s + "ft "
+      %td= number_with_precision(rwy.lat, :precision => 2)
+      %td= number_with_precision(rwy.lon, :precision => 2)
+      %td
+        - if rwy.ils?
+          %span.badge.badge-success ✓
+        - else
+          %span.badge.badge-important ✘
+      %td= rwy.ils? ? rwy.ils_freq : "-"
+      %td= raw(rwy.ils? ? rwy.ils_fac.to_s + "&deg;".html_safe : "-")
+      %td= raw(rwy.glidepath.to_s + "&deg;".html_safe)

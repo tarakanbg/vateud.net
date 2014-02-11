@@ -2,7 +2,9 @@
   .container
     .row.sections
       = render "recent_news"
-      = render "upcoming_events"
-      = render "latest_tasks"
+      - cache("upcoming_events", :expires_in => 15.minutes) do
+        = render "upcoming_events"
+      - cache("latest_tasks", :expires_in => 15.minutes) do
+        = render "latest_tasks"
 
     = render "social"
