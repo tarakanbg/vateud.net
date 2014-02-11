@@ -16,7 +16,7 @@
 }
 #blog .post_row{
 	margin-left: 0;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	height: 495px;
 }
 #blog .lastpost_row{
@@ -85,7 +85,7 @@
 	padding-top: 12px;
 }
 #blog .post_row .post .author_box  h6{
-	margin: 0 0 3px 0;	
+	margin: 0 0 3px 0;
 	font-size: 13px;
 	line-height: 15px;
 	font-style: italic;
@@ -122,7 +122,7 @@
 	-moz-transition: all .1s linear;
 	-ms-transition: all .1s linear;
 	-o-transition: all .1s linear;
-	transition: all .1s linear;	
+	transition: all .1s linear;
 }*/
 #blog .post_row .post:hover a.plus_wrapper{
 	display: block;
@@ -159,10 +159,10 @@
 
 }
 @media (max-width: 979px) {
-	
+
 }
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { 
+@media (min-width: 768px) and (max-width: 979px) {
 	#blog .pagination{
 		width: 36%;
 	}
@@ -172,7 +172,7 @@
 
 }
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {	
+@media (max-width: 767px) {
 	#blog .post_row{
 		height: auto;
 		margin-bottom: 0;
