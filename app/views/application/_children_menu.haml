@@ -1,0 +1,7 @@
+- if @page.children
+  %ul.nav.nav-list
+    %li.nav-header= @page.title
+    - for page in @page.children
+      %li.country{:class => ("active" if @page && page.id == @page.id)}
+        -#= image_tag "flags/#{country.code.downcase}_small.png", :class => "flag_list"
+        = link_to page.title, page.url

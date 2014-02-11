@@ -1,5 +1,6 @@
 html {
 	margin: 0;
+    height: 100%;
 }
 body {
 	position: relative;
@@ -7,6 +8,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Lato', sans-serif !important;
 	padding-top: 107px;
+    height: 100%;
 }
 @media (max-width: 979px) {
 	body { padding-top: 0 !important; }
