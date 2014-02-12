@@ -22,17 +22,18 @@ class Airport < ActiveRecord::Base
     Airdata::Airport.find_by_icao(self.icao.upcase)
   end
 
-  def charts_from_api
-    response = Faraday.get("http://api.vateud.net/charts/#{self.icao}.json")
-    JSON.parse(response.body)
-  end
+  #def charts_from_api
+  #  response = Faraday.get("http://api.vateud.net/charts/#{self.icao}.json")
+  #  JSON.parse(response.body)
+  #end
 
   def v_metar
     response = Faraday.get("http://metar.vatsim.net/#{self.icao}")
     response.body.to_s
   end
 
-
-
+  def notams
+    self.icao.notams
+  end
 
 end

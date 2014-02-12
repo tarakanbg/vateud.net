@@ -5,8 +5,8 @@
       %th Link
       %th Cached
   %tbody
-    - for chart in @airport.charts_from_api
+    - for chart in ChartFetcher.new(@icao).charts
       %tr
-        %td.small-caps= chart["name"].downcase
-        %td= link_to "Downolad", chart["url_aip"]
-        %td= link_to "Cached", chart["url_charts_aero"]
+        %td.small-caps= chart.name.downcase
+        %td= link_to "Downolad", chart.url_aip
+        %td= link_to "Cached", chart.url_charts_aero

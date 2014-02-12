@@ -33,7 +33,7 @@
           = render :partial => 'airport_charts'
         %h4 Notams
         - cache("#{@icao}_notams", :expires_in => 8.hours) do
-          - for notam in @icao.notams
+          - for notam in @airport.notams
             %pre.notam= notam
 
 
