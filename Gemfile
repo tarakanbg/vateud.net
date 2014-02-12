@@ -23,6 +23,7 @@ gem "mercury-rails", "~> 0.9.0"
 gem "feedzirra", "~> 0.7.0"
 gem "turbolinks", "~> 2.2.1"
 gem "jquery-turbolinks", "~> 2.0.1"
+gem "redcarpet", "~> 3.0.0"
 
 # Frontend Visual fluff
 gem "jquery-rails", "2.3.0"

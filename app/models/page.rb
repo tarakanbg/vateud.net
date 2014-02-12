@@ -11,6 +11,8 @@ class Page < ActiveRecord::Base
 
   default_scope order('lft ASC')
 
+  validates :title, :layout_id, :presence => true
+
   extend FriendlyId
   friendly_id :name, :use => :slugged
 

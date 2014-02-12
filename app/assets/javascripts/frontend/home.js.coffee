@@ -26,7 +26,7 @@ $n = undefined
 
 # I can only pop the $n var when document is ready
 $(document).ready ->
-  $n = $('body')
+  $n = $('.navbar.navbar-static-top')
 
 # get the event type, ex: a "page:change" will return only 'page'
 eventType = (event) ->

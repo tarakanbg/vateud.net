@@ -10,6 +10,13 @@ class HomeController < ApplicationController
     # @images =
   end
 
+  def help
+    @pagetitle = "Documentation"
+    @pages = Page.main.visible.in_menu
+    m = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(:with_toc_data => true))
+    @content = m.render(File.open(Rails.root + "HELP.md", 'r').read)
+  end
+
   # def mercury_update
   #   if admin_user_signed_in?
   #     page =Page.find(params[:id])

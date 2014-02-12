@@ -31,6 +31,7 @@ VateudNet::Application.routes.draw do
   # end
 
   get 'news' => 'news#index'
+  get 'help' => 'home#help'
   get 'events' => 'events#index'
   get 'countries' => 'countries#index'
   get 'countries/:id' => 'countries#show'
