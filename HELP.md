@@ -145,4 +145,24 @@ and those versioned entires can be used as revert points if needed. There's only
 for that in the initial release though, no web UI. The data however is there, and accumulating and it can be hooked
 to a web UI in future revisions.
 
+## Fragment caching
 
+Country profiles and especially airport profiles aggregate a lot of live data, and might take a while
+to load depending on how recently they have been requested previously. There's a lot of server fragment
+caching going on to minimize the annoyance. The fragment caching times overlap in order to almost never
+require a full data refresh and they are as follows:
+
+* Airport charts: 6 hours
+* Airport notams: 8 hours
+* Skyvector embedded VFR chart: 22 hours
+* Airport map: 23 hours
+* Airport online listings: 5 minutes
+* Airport general details: 30 minutes
+* Airport metar: 10 minutes
+* Country ATC frequencies: 3 hours
+* Country events: 20 minutes
+* Country airports: 20 minutes
+* Country staff list: 20 minutes
+* Squawk ranges: 12 hours
+* Upcoming events (frontpage): 15 minutes
+* Latest tasks (frontpage): 15 minutes
