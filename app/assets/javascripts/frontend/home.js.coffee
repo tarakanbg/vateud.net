@@ -26,7 +26,7 @@ $n = undefined
 
 # I can only pop the $n var when document is ready
 $(document).ready ->
-  $n = $('.navbar.navbar-static-top')
+  $n = $('body')
 
 # get the event type, ex: a "page:change" will return only 'page'
 eventType = (event) ->
@@ -53,3 +53,10 @@ $(document).on 'ajax:before ajaxStart page:fetch', (event) ->
   loadState event
 $(document).on 'ajax:complete ajaxComplete page:change', (event) ->
   doneState event
+
+
+$(document).on 'page:change', ->
+  if window._gaq?
+    _gaq.push ['_trackPageview']
+  else if window.pageTracker?
+    pageTracker._trackPageview()

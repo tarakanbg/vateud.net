@@ -2,6 +2,7 @@
 %html
   %head
     %title= "VATEUD.net: #{@pagetitle}"
+    <meta charset="UTF-8">
     <meta name="description" content="#{@page_description ? @page_description : "VATSIM European Division"}" />
     <meta name="keywords" content="#{@page_keywords ? @page_keywords : "VATSIM, VATEUD, flight, simulation, atc"}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@
 
     = yield
 
+    = render :partial => 'ga'
     = footer
     = javascript_include_tag "application"
 

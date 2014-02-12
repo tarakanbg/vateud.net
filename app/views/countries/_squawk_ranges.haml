@@ -8,10 +8,11 @@
       %th End
   %tbody
     - for sq in @squawks
-      %tr
-        %td.small-caps= sq.facility
-        %td= sq.position
-        %td= sq.start
-        %td= sq.end
+      - unless sq.facility == "Free"
+        %tr
+          %td.small-caps= sq.facility
+          %td= sq.position
+          %td= sq.start
+          %td= sq.end
 .note * Click table headers to dynamically sort the data
 

@@ -1,0 +1,12 @@
+#aboutus
+  .container
+    .row
+      .span3
+        = render :partial => 'children_menu'
+
+      .span9
+        .section_header
+          %h3.center= @page.title
+        .single_with_menu
+          #page_content.mercury-region{:data => {:mercury => "full"}}
+            =raw(@page.post)

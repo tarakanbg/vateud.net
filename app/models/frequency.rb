@@ -18,4 +18,5 @@ class Frequency < ActiveRecord::Base
 
   scope :european, where("country NOT IN (?)", excluded_ids)
 
+
 end
