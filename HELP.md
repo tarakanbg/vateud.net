@@ -166,3 +166,10 @@ require a full data refresh and they are as follows:
 * Squawk ranges: 12 hours
 * Upcoming events (frontpage): 15 minutes
 * Latest tasks (frontpage): 15 minutes
+
+## Responsive layout
+
+The site is designed to be cross-browser compatible and responsive. It should scale automatically to
+fit any desktop or mobile device screen without significant visual issues. Tested on Chrome, Firefox,
+Opera and Internet Explorer latest versions on desktop, mobile Chrome, Dolphin, Opera and default Android
+browser on both phone and tablet (Android).

@@ -2,7 +2,6 @@
   .container
     .section_header
       %h3 News
-      / <input type="text" class="input-large search-query" placeholder="Search">
     - counter = 0
     - for item in @news
       = raw("<div class=\"row post_row\">") if counter == 0
@@ -19,6 +18,6 @@
       - counter == 2 ? counter = 0 : counter += 1
 
 
+    .clear
     .pagination
       = will_paginate @news
-      / = will_paginate(@news, :renderer => WillPaginate::ActionView::LinkRenderer)
