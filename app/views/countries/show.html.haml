@@ -26,6 +26,7 @@
 
           .span4
             =image_tag "maps/#{@country.code.downcase}.gif", :class => "image_map"
+            .clear
             - cache("#{@country.code}_events_airports", :expires_in => 20.minutes) do
               .country-airports
                 %h3 Country Airports

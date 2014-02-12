@@ -45,8 +45,8 @@ img.flag_list {
 
 img.image_map {float: right;}
 .justify {text-align: justify}
-img.big_flag {float:left; width: 150px; margin-top: -15px; margin-bottom: -15px; margin-right: 10px;}
-.vacc-links {margin-left: auto; margin-right: auto; text-align: center; width: 100%; margin-top: 10px;}
+img.big_flag {float:left; width: 150px; margin-top: -15px; margin-bottom: -10px; margin-right: 20px;}
+.vacc-links {margin-left: auto; margin-right: auto; width: 100%; margin-top: 10px;}
 .strong {font-weight: bold;}
 .small-caps {font-variant: small-caps;}
 #mapap { height: 250px; }
@@ -61,3 +61,6 @@ ul.home {list-style-image:url(image_path('on.png')); margin-left: 80px; margin-r
 #footer .credits .social {margin-top: 10px;}
 .spinner {position: absolute; margin-top: 300px; margin-left: 300px; width: 200px; height: 200px;}
 .single_with_menu {margin-left: auto; margin-right: auto; max-width: 800px;}
+h3 {border-bottom: 1px solid #000; margin-top: 15px;}
+h4 {border-bottom: 1px solid #000; margin-top: 15px;}
+.clear { clear: both;}
