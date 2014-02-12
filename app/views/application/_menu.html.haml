@@ -36,5 +36,17 @@
               - next
             - else
               %li=link_to page.name.upcase, page.url
+          %li.dropdown{"data-no-turbolink" => true}
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-no-turbolink>
+            SERVICES
+            <b class="caret"></b>
+            </a>
+            %ul.dropdown-menu{"data-no-turbolink" => true}
+              %li= link_to "VATEUD API", "http://api.vateud.net", :target => "_blank"
+              %li= link_to "TASKS AND WORKFLOW APPLICATION", "http://tasks.vateud.net", :target => "_blank"
+              %li= link_to "ATSIMTEST", "http://atsimtest.com", :target => "_blank"
+              %li= link_to "PILOT TRAINING CENTRE", "http://ptd.vateud.net", :target => "_blank"
+              %li= link_to "EXAM FLIGHT GROUP", "http://cpt.vateud.net", :target => "_blank"
+              %li= link_to "OLD WEBSITE", "http://old.vateud.net", :target => "_blank"
           %li= link_to "FORUMS", "http://forum.vateud.net/", :target => "_blank"
 
