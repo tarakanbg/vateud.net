@@ -5,7 +5,7 @@
       %th Position Name
       %th Frequency
   %tbody
-    - for freq in @country.subdivision.frequencies
+    - for freq in @country.frequencies
       %tr
         %td= freq.callsign
         %td= freq.name
