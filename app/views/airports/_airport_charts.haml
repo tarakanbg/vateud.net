@@ -5,8 +5,12 @@
       %th Link
       %th Cached
   %tbody
-    - for chart in ChartFetcher.new(@icao).charts
+    - unless @charts.class == String
+      - for chart in @charts
+        %tr
+          %td.small-caps= chart.name.downcase
+          %td= link_to "Downolad", chart.url_aip
+          %td= link_to "Cached", chart.url_charts_aero
+    -else
       %tr
-        %td.small-caps= chart.name.downcase
-        %td= link_to "Downolad", chart.url_aip
-        %td= link_to "Cached", chart.url_charts_aero
+        %rd{:colspan => 3} Charts data currently unavailable

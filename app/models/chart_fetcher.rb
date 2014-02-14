@@ -18,9 +18,9 @@ class ChartFetcher
     @raw = raw_list
     return custom_charts(custom) if custom.count > 0
     return @charts = "No charts available" if @raw == "NADA"
-    @plates = plates_list  
+    @plates = plates_list
     @plate_names = plate_names
-    @charts = [] 
+    @charts = []
     @overrides = ChartOverride.where(:icao => @icao)
     grouped_plates
     list_charts
@@ -36,6 +36,8 @@ class ChartFetcher
   def raw_list
     Nokogiri::HTML(open("https://charts.aero/airport/#{@icao}", :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE))
   rescue RuntimeError
+    "NADA"
+  rescue Exception
     "NADA"
   end
 
