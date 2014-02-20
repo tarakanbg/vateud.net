@@ -63,4 +63,9 @@ $(document).ready(function(){
     }, function() {
         $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
     });
-    n})
+    })
+
+$(document).ready(function(){
+    $("[rel=tooltip]").tooltip({ placement: 'bottom'});
+    $("[rel=tooltip-right]").tooltip({ placement: 'right'});
+});
