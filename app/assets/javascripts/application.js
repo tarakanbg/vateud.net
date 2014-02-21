@@ -48,7 +48,7 @@ jQuery(parent).trigger('initialize:frame');
 $(document).ready(function() {
     $('#calendar').fullCalendar({
         events: {
-            url: 'http://www.google.com/calendar/feeds/4mmstomhihc2tt4p4utu8eqbdqesse67%40import.calendar.google.com/public/basic',
+            url: 'http://www.google.com/calendar/feeds/vat4s640acvmfgs978s5qp77ik0njqdo%40import.calendar.google.com/public/basic',
             className: 'eud-event',           // an option!
             currentTimezone: 'Zulu' // an option!
         },
