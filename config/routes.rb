@@ -33,6 +33,7 @@ VateudNet::Application.routes.draw do
   get 'news' => 'news#index'
   get 'help' => 'home#help'
   get 'events' => 'events#index'
+  get 'events/json' => 'events#json'
   get 'countries' => 'countries#index'
   get 'countries/:id' => 'countries#show'
   get 'airports/:id' => 'airports#show'

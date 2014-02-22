@@ -47,11 +47,14 @@ jQuery(parent).trigger('initialize:frame');
 
 $(document).ready(function() {
     $('#calendar').fullCalendar({
-        events: {
-            url: 'http://www.google.com/calendar/feeds/vat4s640acvmfgs978s5qp77ik0njqdo%40import.calendar.google.com/public/basic',
-            className: 'eud-event',           // an option!
-            currentTimezone: 'Zulu' // an option!
-        },
+        eventSources: [
+            {
+                url: '/events/json.json',
+                className: 'eud-event',
+                currentTimezone: 'Zulu'
+            }
+        ]
+        ,
         timeFormat: 'HH(:mm)',
         firstDay: 1
     });
