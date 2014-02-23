@@ -8,9 +8,9 @@
     - unless @charts.class == String
       - for chart in @charts
         %tr
-          %td.small-caps= chart.name.downcase
-          %td= link_to "Download", chart.url_aip
-          %td= link_to "Cached", chart.url_charts_aero
+          %td.small-caps= chart["name"].downcase
+          %td= link_to "Download", chart["url_aip"]
+          %td= link_to "Cached", chart["url_charts_aero"]
     -else
       %tr
         %rd{:colspan => 3} Charts data currently unavailable
