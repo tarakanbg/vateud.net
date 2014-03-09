@@ -24,7 +24,11 @@ class Airport < ActiveRecord::Base
 
   def charts_from_api
     response = Faraday.get("http://api.vateud.net/charts/#{self.icao}.json")
-    JSON.parse(response.body)
+    unless response.body == "No charts available for this airport"
+      JSON.parse(response.body)
+    else
+      response.body
+    end
   end
 
   def v_metar
